@@ -140,8 +140,8 @@ export function Footer() {
           </div>
           <p className="mt-4 text-center text-xs text-muted-foreground">
             {locale === 'ar'
-              ? 'كلية علوم الأرض · جامعة الملك عبدالعزيز'
-              : 'Faculty of Earth Sciences · King Abdulaziz University'}
+              ? 'كلية التعدين · جامعة الملك عبدالعزيز'
+              : 'School of Mines · King Abdulaziz University'}
           </p>
         </div>
 

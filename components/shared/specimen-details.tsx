@@ -33,9 +33,9 @@ export function SpecimenDetails({
 
   const fields: { label: string; value?: string; arabicValue?: string }[] = [
     { label: t.details.fields.type, value: specimen.type, arabicValue: specimen.arabicType },
+    { label: t.details.fields.chemicalFormula, value: specimen.chemicalFormula, arabicValue: specimen.arabicChemicalFormula },
     { label: t.details.fields.texture, value: specimen.texture, arabicValue: specimen.arabicTexture },
     { label: t.details.fields.mineralogy, value: specimen.mineralogy, arabicValue: specimen.arabicMineralogy },
-    { label: t.details.fields.formation, value: specimen.formation, arabicValue: specimen.arabicFormation },
     { label: t.details.fields.color, value: specimen.color, arabicValue: specimen.arabicColor },
     { label: t.details.fields.environment, value: specimen.environment, arabicValue: specimen.arabicEnvironment },
     { label: t.details.fields.uses, value: specimen.uses, arabicValue: specimen.arabicUses },
@@ -44,6 +44,7 @@ export function SpecimenDetails({
     { label: t.details.fields.luster, value: specimen.luster, arabicValue: specimen.arabicLuster },
     { label: t.details.fields.crystalSystem, value: specimen.crystalSystem, arabicValue: specimen.arabicCrystalSystem },
     { label: t.details.fields.streak, value: specimen.streak, arabicValue: specimen.arabicStreak },
+
   ].filter((f) => f.value || f.arabicValue);
 
   return (

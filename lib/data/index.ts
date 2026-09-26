@@ -2,6 +2,8 @@ import { rocks } from './rocks';
 import { minerals } from './minerals';
 import type { Specimen } from './rocks';
 
+
+
 export type { Specimen } from './rocks';
 
 export const allRocks = rocks;
@@ -25,15 +27,15 @@ export function searchSpecimens(
 ): Specimen[] {
   const q = query.trim().toLowerCase();
   if (!q) return list;
-  return list.filter(
-    (s) =>
-      s.name.toLowerCase().includes(q) ||
-      s.arabicName.includes(q) ||
-      s.subtitle.toLowerCase().includes(q) ||
-      s.arabicSubtitle.includes(q) ||
-      s.type.toLowerCase().includes(q) ||
-      s.location.toLowerCase().includes(q),
-  );
+return list.filter(
+  (s) =>
+    s.name.toLowerCase().includes(q) ||
+    s.arabicName.includes(q) ||
+    s.subtitle.toLowerCase().includes(q) ||
+    s.arabicSubtitle.includes(q) ||
+    s.type.toLowerCase().includes(q) ||
+    (s.location?.toLowerCase().includes(q) ?? false),
+);
 }
 
 export function featuredByTag(tag: string): Specimen[] {
@@ -59,4 +61,5 @@ export function getAdjacentSpecimens(
     prev: index > 0 ? list[index - 1] : null,
     next: index < list.length - 1 ? list[index + 1] : null,
   };
+  
 }

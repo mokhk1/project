@@ -46,7 +46,7 @@ export function MascotIntro({ mascot, className }: MascotIntroProps) {
               <p
                 className={cn(
                   'text-xs font-semibold uppercase tracking-[0.15em]',
-                  isSakhr ? 'text-primary' : 'text-secondary-foreground',
+                  isSakhr ? 'text-primary' : 'text-primary'
                 )}
               >
                 {role}

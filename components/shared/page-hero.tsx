@@ -22,7 +22,7 @@ export function PageHero({
 }: PageHeroProps) {
   const { locale } = useApp();
   return (
-    <section className="relative flex min-h-[58vh] items-end overflow-hidden pt-20">
+    <section className="relative flex min-h-[58vh] items-end overflow-hidden pt-2">
       <div className="absolute inset-0">
         <Image
           src={image}

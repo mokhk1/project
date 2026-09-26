@@ -174,7 +174,7 @@ export default function HomePage() {
                 <h3 className="mt-8 text-2xl font-bold tracking-tight text-foreground">
                   {t.home.yaqootName}
                 </h3>
-                <span className="mt-2 inline-flex w-fit items-center rounded-full bg-secondary/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
+                <span className="mt-2 inline-flex w-fit items-center rounded-full bg-primary/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
                   {t.home.yaqootRole}
                 </span>
                 <p className="mt-5 max-w-xs text-base leading-relaxed text-muted-foreground">

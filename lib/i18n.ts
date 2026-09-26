@@ -8,7 +8,7 @@ export const dictionary = {
       rocks: 'Rock Collection',
       minerals: 'Mineral Collection',
       featured: 'Featured Specimens',
-      faculty: 'Faculty of Earth Sciences',
+      faculty: 'School of Mines',
       about: 'About',
       contact: 'Contact',
       search: 'Search',
@@ -16,20 +16,20 @@ export const dictionary = {
     home: {
       heroTitle: 'DETHAR Geological Museum',
       heroSubtitle:
-        'Explore the official digital archive of rocks, minerals, and Earth geological heritage from the Faculty of Earth Sciences.',
+        'DETHAR is the official digital gateway to the School of Mines Museum, preserving and showcasing authenticated geological specimens through an interactive educational platform.',
       exploreRocks: 'Explore the Rock Collection',
       exploreMinerals: 'Explore the Mineral Collection',
-      scroll: 'Scroll to explore',
+      scroll: '',
       aboutEyebrow: 'About the Museum',
       aboutTitle: 'A digital window into Earth deep history',
       aboutBody:
-        'DETHAR is the digital geological museum of the Faculty of Earth Sciences at King Abdulaziz University. It preserves, studies, and presents a curated collection of rocks and minerals from across the Kingdom and beyond, making geological heritage accessible to students, researchers, and the public.',
+        'DETHAR is the digital geological museum of the School of Mines at King Abdulaziz University. It preserves, studies, and presents a curated collection of rocks and minerals from across the Kingdom and beyond, making geological heritage accessible to students, researchers, and the public.',
       missionTitle: 'Our Mission',
       missionBody:
-        'To document and share the geological wealth of the Arabian Peninsula through a rigorous, accessible digital collection that supports education and research.',
+        'To preserve, document, and digitally present the geological collections of the School of Mines Museum while supporting education, research, and public engagement.',
       visionTitle: 'Our Vision',
       visionBody:
-        'To be the leading digital reference for the geological heritage of Saudi Arabia and the region, inspiring curiosity and stewardship of the Earth.',
+        'To become the leading digital geological museum in the region, connecting geological heritage with modern technology and interactive learning.',
       featuredEyebrow: 'Featured Specimens',
       featuredTitle: 'Highlights from the collection',
       featuredSubtitle:
@@ -48,11 +48,11 @@ export const dictionary = {
         'Explore the full collection, learn how each specimen formed, and discover the story written in stone.',
       ctaRocks: 'Browse the Rock Collection',
       ctaMinerals: 'Browse the Mineral Collection',
-      heroKicker: 'Faculty of Earth Sciences · King Abdulaziz University',
-      storyEyebrow: 'The Collection',
-      storyTitle: 'A living archive of the Earth',
+      heroKicker: 'School of Mines · King Abdulaziz University',
+      storyEyebrow: 'THE DIGITAL MUSEUM',
+      storyTitle: 'Preserving the Museum, Sharing the Heritage.',
       storyBody:
-        'Every specimen in DETHAR is a fragment of deep time — a chapter from the story of the Arabian Shield, the Red Sea coast, and the volcanic fields of the west. Together, they form a living archive that anyone can explore.',
+        'DETHAR transforms the School of Mines Museum into an interactive digital experience, allowing students, researchers, and visitors to explore authenticated geological specimens anytime and from anywhere.',
       storyStat1: 'Specimens documented',
       storyStat2: 'Field sites across the Kingdom',
       storyStat3: 'Years of fieldwork',
@@ -106,7 +106,7 @@ export const dictionary = {
         'This specimen is not part of the current collection. It may have been moved or archived.',
       browseCollection: 'Browse the collection',
       fields: {
-        type: 'Rock Type',
+        type: 'Type',
         texture: 'Texture',
         mineralogy: 'Mineralogy',
         formation: 'Formation',
@@ -118,54 +118,73 @@ export const dictionary = {
         luster: 'Luster',
         crystalSystem: 'Crystal System',
         streak: 'Streak',
+        chemicalFormula: 'Chemical Formula',
       },
     },
     featured: {
       title: 'Featured Specimens',
       eyebrow: 'Museum Highlights',
-      subtitle:
-        'Rare specimens, Saudi highlights, newest additions, and editor picks from the DETHAR collection.',
-      tabs: {
-        highlights: 'Museum Highlights',
-        rare: 'Rare Specimens',
-        saudi: 'Saudi Specimens',
-        newest: 'Newest Additions',
-        picks: "Editor's Picks",
-      },
+       subtitle:
+    'Explore fossils and petroleum exhibits, the geological library, museum galleries, and the highlights of the DETHAR Geological Museum.',
+
+tabs: {
+  all: 'all',
+  exhibits: 'Fossils & Petroleum',
+  library: 'Library',
+  Highlights: 'Highlights',
+},
     },
-    faculty: {
-      title: 'Faculty of Earth Sciences',
-      eyebrow: 'King Abdulaziz University',
-      intro:
-        'The Faculty of Earth Sciences at King Abdulaziz University is a leading center for geological education and research in the Kingdom of Saudi Arabia, and the home of the DETHAR digital museum.',
-      campusTitle: 'A campus built on stone',
-      campusBody:
-        'Located in Jeddah, the faculty brings together laboratories, teaching collections, and field research programs across the Arabian Shield and the Red Sea coast.',
-      departmentsTitle: 'Departments',
-      departments: [
-        { name: 'Geology', desc: 'Petrology, structural geology, and the geological mapping of the Kingdom.' },
-        { name: 'Geophysics', desc: 'Seismic, potential-field, and subsurface imaging of the Arabian Plate.' },
-        { name: 'Marine Geology', desc: 'Red Sea and Gulf of Aqaba coastal and marine geological processes.' },
-        { name: 'Meteorology', desc: 'Atmospheric sciences, climate, and weather of the region.' },
-        { name: 'Space Sciences', desc: 'Remote sensing, planetary geology, and Earth observation.' },
+faculty: {
+  title: 'School of Mines',
+
+  eyebrow: 'King Abdulaziz University',
+
+  intro:
+    'The School of Mines at King Abdulaziz University provides specialized education in Earth sciences and mining engineering through the integration of geological, geophysical, and engineering knowledge, with a focus on preparing scientific and professional competencies in mineral exploration, evaluation, and extraction.',
+
+  campusTitle: 'An Academic Environment Integrating Earth Sciences and Mining Engineering',
+
+  campusBody:
+    'The School provides an educational environment that combines theoretical study with practical and field applications in Earth sciences and mining. The academic program includes geology, geophysics, and mining engineering, together with laboratory work, field applications, cooperative training, and a graduation project that connect academic knowledge with professional practice.',
+
+  departmentsTitle: 'Academic Fields',
+
+  departments: [
+    {
+  name: 'Geology',
+  desc: 'The field of geology focuses on the study of the Earth, its history, structure, and geological processes, with emphasis on rocks, minerals, geological strata, and structural features. It covers the study of igneous, metamorphic, and sedimentary rocks, mineralogy, paleontology, geomorphology, structural geology, geographic information systems, and remote sensing. The field also includes economic geology and ore geology, the geology of the Kingdom, geochemistry, petroleum geology, and hydrogeology, in addition to field-based and computational applications in geology.'
+},
+
+{
+  name: 'Geophysics',
+  desc: 'The field of geophysics focuses on studying the Earth’s subsurface and its physical properties using geophysical methods and measurements. It includes seismic exploration using refraction and reflection methods, geoelectrical exploration, magnetic and gravity exploration, as well as electromagnetic exploration. The field also covers seismology, geophysical signal analysis, well logging, and archaeological geophysics, with the application of geophysical methods in exploration activities and the investigation of subsurface structures.'
+},
+
+{
+  name: 'Mining Engineering',
+  desc: 'The field of mining engineering focuses on the engineering and technical aspects associated with mining operations, ore extraction, and resource management. It includes the study of rock mechanics, mining operating systems, ore resource estimation and modeling, mine surveying and geographic information systems, and the planning and design of open-pit and underground mines. The field also covers drilling and blasting in mining, ore transportation and handling, physical mineral processing, as well as the economic, legal, and regulatory aspects of mining and field training in the mining sector.'
+},
       ],
-      missionTitle: 'Mission',
-      missionBody:
-        'To graduate qualified earth scientists, advance geological research, and serve society through the study and stewardship of natural resources.',
-      visionTitle: 'Vision',
-      visionBody:
-        'To be a regional leader in earth sciences education and research, recognized for scientific rigor and national service.',
-      historyTitle: 'A short history',
-      historyBody:
-        'Established in 1975, the faculty has grown into one of the most established earth-science schools in the region, with graduates working across mining, water, environment, and energy sectors nationwide.',
-      galleryTitle: 'Faculty gallery',
+missionTitle: 'Mission',
+missionBody:
+  'To prepare and graduate qualified earth scientists and mining professionals through comprehensive academic and practical education, advance scientific research in earth and mineral sciences, and contribute to society through the responsible study, exploration, management, and stewardship of natural resources.',
+
+visionTitle: 'Vision',
+visionBody:
+  'To become a leading regional institution in earth sciences and mining education and research, recognized for academic excellence, scientific rigor, innovation, professional development, and its contribution to the sustainable development and responsible management of natural resources.',
+
+historyTitle: 'A Short History',
+historyBody:
+  'Established in 1975, the faculty has developed into an established institution for earth sciences education and research in the region. Over the years, its academic programs and scientific activities have expanded to cover major areas of geology, geophysics, mining, water resources, environmental studies, and natural-resource exploration, contributing qualified graduates and scientific expertise to sectors across the Kingdom.',
+
+galleryTitle: 'Faculty Gallery',
     },
     about: {
       title: 'About DETHAR',
       eyebrow: 'The Museum',
       storyTitle: 'The story of DETHAR',
       storyBody:
-        'DETHAR began as a teaching collection within the Faculty of Earth Sciences. Over decades of fieldwork across the Arabian Shield, the Red Sea coast, and the volcanic fields of Harrat Khaybar, the collection grew into a significant record of the Kingdom geological heritage. Today, DETHAR brings that collection online, so that every specimen can be studied in detail from anywhere.',
+        'DETHAR emerged from a student collaboration driven by a shared passion for geology, a love for the museum, and a desire to support its educational mission through a contemporary digital experience. Building on the academic environment of the College of Mining, the students developed an idea that connects geological knowledge with technology, giving the museum’s collections greater accessibility and opportunities for exploration. Today, DETHAR represents a student-led initiative that aims to highlight the value of geological specimens and enhance their educational use through a digital experience that brings together organized presentation, scientific content, and the spirit of the museum.',
       purposeTitle: 'Purpose',
       purposeBody:
         'To preserve, document, and share geological specimens in a way that is rigorous, beautiful, and accessible to everyone, from first-year students to working geologists.',
@@ -182,10 +201,10 @@ export const dictionary = {
       teamEyebrow: 'The People',
       teamTitle: 'Project Team',
       teamSubtitle: 'Designed & Developed with passion by',
-      teamMember1: 'Mohammed Khubrani',
-      teamMember1Role: 'Co-Founder & Developer',
-      teamMember2: 'Layan Hakmi',
-      teamMember2Role: 'Co-Founder & Developer',
+      teamMember1: 'Mohammed Ali Khubrani',
+      teamMember1Role: 'Mineral Resources and Rocks Student',
+      teamMember2: 'Layan Ahmed Hakmi',
+      teamMember2Role: 'Geology Student',
       teamStatement:
         'The DETHAR Geological Digital Museum is a collaborative academic project designed and developed by Mohammed Khubrani and Layan Hakmi. Every aspect of the project—including planning, design, development, museum experience, content organization and user experience—was created together through equal collaboration.',
       teamContact: 'Connect',
@@ -209,14 +228,14 @@ export const dictionary = {
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       locationLabel: 'Location',
-      location: 'Faculty of Earth Sciences, King Abdulaziz University, Jeddah, Saudi Arabia',
+      location: 'School of Mines, King Abdulaziz University, Jeddah, Saudi Arabia',
       hoursLabel: 'Hours',
       hours: 'Sunday – Thursday, 9:00 – 16:00',
       follow: 'Follow the museum',
-      mapAlt: 'Map showing the location of the Faculty of Earth Sciences in Jeddah',
+      mapAlt: 'Map showing the location of the School of Mines in Jeddah',
     },
     footer: {
-      tagline: 'A digital geological museum of the Faculty of Earth Sciences, King Abdulaziz University.',
+      tagline: 'A digital geological museum of the School of Mines, King Abdulaziz University.',
       quickLinks: 'Quick Links',
       collection: 'Collection',
       about: 'About',
@@ -240,7 +259,7 @@ export const dictionary = {
       rocks: 'مجموعة الصخور',
       minerals: 'مجموعة المعادن',
       featured: 'عينات مميزة',
-      faculty: 'كلية علوم الأرض',
+      faculty: 'كلية التعدين',
       about: 'عن المتحف',
       contact: 'تواصل معنا',
       search: 'بحث',
@@ -248,20 +267,20 @@ export const dictionary = {
     home: {
       heroTitle: 'متحف دثار الجيولوجي',
       heroSubtitle:
-        'اكتشف الصخور والمعادن والتراث الجيولوجي للأرض من خلال متحف رقمي تفاعلي.',
+          "دِثار هو البوابة الرقمية الرسمية لمتحف كلية التعدين ويهدف إلى حفظ وعرض العينات الجيولوجية الموثقة من خلال منصة تعليمية تفاعلية، تتيح للطلاب والباحثين والزوار استكشاف المقتنيات المتحفية بطريقة حديثة وسهلة الوصول.",
       exploreRocks: 'استكشف الصخور',
       exploreMinerals: 'استكشف المعادن',
       scroll: 'مرر للأسفل',
       aboutEyebrow: 'عن المتحف',
       aboutTitle: 'نافذة رقمية على تاريخ الأرض العميق',
       aboutBody:
-        'دثار هو المتحف الجيولوجي الرقمي لكلية علوم الأرض بجامعة الملك عبدالعزيز. يحفظ ويدرس ويعرض مجموعة منتقاة من الصخور والمعادن من المملكة وخارجها، ويجعل التراث الجيولوجي في متناول الطلاب والباحثين والجمهور.',
+        'دثار هو المتحف الجيولوجي الرقمي لكلية التعدين بجامعة الملك عبدالعزيز. يحفظ ويدرس ويعرض مجموعة منتقاة من الصخور والمعادن من المملكة وخارجها، ويجعل التراث الجيولوجي في متناول الطلاب والباحثين والجمهور.',
       missionTitle: 'رسالتنا',
       missionBody:
-        'توثيق ومشاركة الثروة الجيولوجية لشبه الجزيرة العربية من خلال مجموعة رقمية دقيقة وسهلة الوصول تدعم التعليم والبحث العلمي.',
+        'حفظ وتوثيق وعرض مقتنيات متحف كلية التعدين رقميًا، بما يدعم التعليم والبحث العلمي ويُسهم في نشر المعرفة الجيولوجية.',
       visionTitle: 'رؤيتنا',
       visionBody:
-        'أن نكون المرجع الرقمي الأول للتراث الجيولوجي للمملكة العربية السعودية والمنطقة، ونلهم الفضول والعناية بالأرض.',
+        'أن يصبح دِثار المتحف الجيولوجي الرقمي الرائد في المنطقة، من خلال ربط التراث الجيولوجي بالتقنيات الحديثة وتجارب التعلم التفاعلية.',
       featuredEyebrow: 'عينات مميزة',
       featuredTitle: 'أبرز مقتنيات المجموعة',
       featuredSubtitle: 'مجموعة منتقاة من العينات الاستثنائية المعروضة في المتحف الرقمي.',
@@ -279,11 +298,11 @@ export const dictionary = {
         'استكشف المجموعة كاملة، وتعرّف على كيفية تكوّن كل عينة، واكتشف القصة المحفورة في الحجر.',
       ctaRocks: 'تصفّح مجموعة الصخور',
       ctaMinerals: 'تصفّح مجموعة المعادن',
-      heroKicker: 'كلية علوم الأرض · جامعة الملك عبدالعزيز',
-      storyEyebrow: 'المجموعة',
-      storyTitle: 'أرشيف حيّ للأرض',
+      heroKicker: 'كلية التعدين · جامعة الملك عبدالعزيز',
+      storyEyebrow: 'المتحف الرقمي',
+      storyTitle: ' رقمنة المتحف لتبقى المعرفة متاحة.',
       storyBody:
-        'كل عينة في دثار هي شظية من الزمن العميق — فصل من قصة الدرع العربي وساحل البحر الأحمر وحقول الحرات البركانية غرب المملكة. معًا، تشكّل أرشيفًا حيًا يستطيع الجميع استكشافه.',
+        'يحوّل دِثار متحف كلية التعدين إلى تجربة رقمية تفاعلية، تُمكّن الطلاب والباحثين والزوار من استكشاف العينات الجيولوجية الموثقة في أي وقت ومن أي مكان.',
       storyStat1: 'عينة موثّقة',
       storyStat2: 'موقع ميداني عبر المملكة',
       storyStat3: 'عام من العمل الميداني',
@@ -335,7 +354,7 @@ export const dictionary = {
         'هذه العينة ليست ضمن المجموعة الحالية. قد تكون قد نُقلت أو أُرشفت.',
       browseCollection: 'تصفّح المجموعة',
       fields: {
-        type: 'نوع الصخر',
+        type: 'النوع',
         texture: 'الملمس',
         mineralogy: 'التركيب المعدني',
         formation: 'التكوين',
@@ -347,53 +366,73 @@ export const dictionary = {
         luster: 'البريق',
         crystalSystem: 'النظام البلوري',
         streak: 'أثر المعدن',
+        chemicalFormula: 'الصيغة الكيميائية',
       },
     },
-    featured: {
-      title: 'عينات مميزة',
-      eyebrow: 'أبرز المقتنيات',
-      subtitle: 'عينات نادرة، وأخرى سعودية، وإضافات حديثة، واختيارات المحرر من مجموعة دثار.',
-      tabs: {
-        highlights: 'أبرز المقتنيات',
-        rare: 'عينات نادرة',
-        saudi: 'عينات سعودية',
-        newest: 'أحدث الإضافات',
-        picks: 'اختيارات المحرر',
-      },
+featured: {
+  title: 'استكشف المتحف',
+  eyebrow: 'اكتشف المجموعات',
+  subtitle:
+    'استكشف الأحافير والبترول، والمكتبة الجيولوجية، ومعرض الصور، وأبرز معروضات متحف ديثار الجيولوجي.',
+
+  tabs: {
+    all: 'الكل',
+    exhibits: 'الأحافير والبترول',
+    Highlights: 'العناصر المميزة',
+    library: 'المكتبة الجيولوجية',
+  },
     },
     faculty: {
-      title: 'كلية علوم الأرض',
-      eyebrow: 'جامعة الملك عبدالعزيز',
-      intro:
-        'كلية علوم الأرض بجامعة الملك عبدالعزيز هي مركز رائد في التعليم والبحث الجيولوجي في المملكة العربية السعودية، وهي موطن المتحف الرقمي دثار.',
-      campusTitle: 'حرم مبني على الحجر',
-      campusBody:
-        'تقع الكلية في جدة، وتضم المختبرات ومجموعات التدريس وبرامج البحث الميداني عبر الدرع العربي وساحل البحر الأحمر.',
-      departmentsTitle: 'الأقسام',
-      departments: [
-        { name: 'الجيولوجيا', desc: 'علم الصخور والجيولوجيا الإنشائية وخرائط المملكة الجيولوجية.' },
-        { name: 'الجيوفيزياء', desc: 'الزلازل والمجالات المحتملة وتصوير باطن الصفيحة العربية.' },
-        { name: 'الجيولوجيا البحرية', desc: 'عمليات البحر الأحمر وخليج العقبة الساحلية والبحرية.' },
-        { name: 'الأرصاد الجوية', desc: 'علوم الغلاف الجوي والمناخ وطقس المنطقة.' },
-        { name: 'علوم الفضاء', desc: 'الاستشعار عن بعد والجيولوجيا الكوكبية ومراقبة الأرض.' },
+ title: 'كلية التعدين',
+
+eyebrow: 'جامعة الملك عبدالعزيز',
+
+intro:
+  'تقدم كلية التعدين بجامعة الملك عبدالعزيز تعليمًا متخصصًا في علوم الأرض وهندسة التعدين، من خلال تكامل المعرفة الجيولوجية والجيوفيزيائية والهندسية، مع التركيز على إعداد الكفاءات العلمية والمهنية المرتبطة باستكشاف الموارد المعدنية وتقييمها واستغلالها.',
+
+campusTitle: 'بيئة أكاديمية تجمع علوم الأرض وهندسة التعدين',
+
+campusBody:
+  'توفر الكلية بيئة تعليمية تجمع بين الدراسة النظرية والتطبيقات العملية والميدانية في مجالات علوم الأرض والتعدين. ويشمل البرنامج الأكاديمي مقررات في الجيولوجيا، والجيوفيزياء، وهندسة التعدين، إلى جانب المعامل والتطبيقات الحقلية والتدريب التعاوني ومشروع التخرج، بما يربط المعرفة الأكاديمية بالتطبيقات المهنية.',
+
+departmentsTitle: 'المجالات الأكاديمية',
+
+departments: [
+  {
+    name: 'الجيولوجيا',
+    desc: 'يختص مجال الجيولوجيا بدراسة الأرض وتاريخها وبنيتها وعملياتها الجيولوجية، مع التركيز على الصخور والمعادن والطبقات الجيولوجية والتراكيب البنيوية. ويشمل المجال دراسة الصخور النارية والمتحولة والرسوبية، علم المعادن، علم الأحافير، علم أشكال سطح الأرض، الجيولوجيا البنائية، ونظم المعلومات الجغرافية والاستشعار عن بعد. كما يتناول الجيولوجيا الاقتصادية وجيولوجيا الخامات، جيولوجيا المملكة، الجيوكيمياء، جيولوجيا البترول، وجيولوجيا المياه، إلى جانب التطبيقات الحقلية والحوسبية في الجيولوجيا.'
+  },
+
+{ 
+  name: 'الجيوفيزياء', 
+  desc: 'يركز مجال الجيوفيزياء على دراسة باطن الأرض وخصائصه الفيزيائية باستخدام الأساليب والقياسات الجيوفيزيائية. ويتضمن المجال الاستكشاف السيزمي بالطرق الانكسارية والانعكاسية، والاستكشاف الجيوكهربائي، والاستكشاف المغناطيسي والتثاقلي، إضافة إلى الاستكشاف الكهرومغناطيسي. كما يشمل دراسة علم الزلازل، تحليل الإشارات الجيوفيزيائية، سبر الآبار، والجيوفيزياء الأثرية، مع توظيف الأساليب الجيوفيزيائية في أعمال الاستكشاف ودراسة التراكيب تحت سطح الأرض.'
+},
+
+{ 
+  name: 'هندسة التعدين', 
+  desc: 'يركز مجال هندسة التعدين على الجوانب الهندسية والفنية المرتبطة بعمليات التعدين واستخراج الخامات وإدارتها. ويشمل دراسة ميكانيكا الصخور، أنظمة تشغيل التعدين، تقدير موارد الخام ونمذجتها، مسح المناجم ونظم المعلومات الجغرافية، وتخطيط وتصميم المناجم السطحية وتحت الأرض. كما يتناول المجال الحفر والتفجير في التعدين، نقل الخامات وتداولها، المعالجة الفيزيائية للمعادن، إلى جانب الجوانب الاقتصادية والقانونية والتنظيمية والتدريب الميداني في مجال التعدين.'
+},
       ],
-      missionTitle: 'الرسالة',
-      missionBody:
-        'تخريج علماء أرض مؤهلين، وتطوير البحث الجيولوجي، وخدمة المجتمع عبر دراسة ورعاية الموارد الطبيعية.',
-      visionTitle: 'الرؤية',
-      visionBody:
-        'أن نكون رائدًا إقليميًا في تعليم وبحوث علوم الأرض، معروفًا بالصرامة العلمية والخدمة الوطنية.',
-      historyTitle: 'نبذة تاريخية',
-      historyBody:
-        'تأسست الكلية عام 1975، ونمت لتصبح واحدة من أكثر مدارس علوم الأرض رسوخًا في المنطقة، ويعمل خريجوها في قطاعات التعدين والمياه والبيئة والطاقة على مستوى المملكة.',
-      galleryTitle: 'معرض الكلية',
+missionTitle: 'الرسالة',
+missionBody:
+  'حفظ وتوثيق وعرض المقتنيات الجيولوجية لكلية علوم الأرض رقميًا، بما يدعم التعليم والبحث العلمي، ويُسهم في نشر المعرفة الجيولوجية وإتاحة دراسة العينات للطلاب والباحثين والجمهور.',
+
+visionTitle: 'الرؤية',
+visionBody:
+  'أن يكون دِثار متحفًا جيولوجيًا رقميًا رائدًا في المنطقة، يوظف التقنيات الحديثة في حفظ التراث الجيولوجي وتوثيقه وإتاحته، ويقدم تجربة تعليمية تفاعلية تربط المعرفة الجيولوجية بالمقتنيات الفعلية للمتحف.',
+
+historyTitle: 'نبذة تاريخية',
+historyBody:
+  'تعود المجموعة التي يقوم عليها دِثار إلى مجموعة تعليمية داخل كلية علوم الأرض، ونمت على مدى عقود من العمل الميداني والدراسات الجيولوجية في مناطق مختلفة من المملكة، بما في ذلك الدرع العربي وساحل البحر الأحمر وحقول الحرات البركانية. ويعمل دِثار على تحويل هذه المجموعة إلى سجل رقمي يتيح دراسة العينات وتوثيق سياقها العلمي وإتاحة محتواها للطلاب والباحثين والجمهور.',
+
+galleryTitle: 'معرض الكلية',
     },
     about: {
       title: 'عن دثار',
       eyebrow: 'المتحف',
       storyTitle: 'قصة دثار',
       storyBody:
-        'بدأ دثار كمجموعة تعليمية داخل كلية علوم الأرض. وعلى مدى عقود من العمل الميداني عبر الدرع العربي وساحل البحر الأحمر وحقول الحرات البركانية، نمت المجموعة لتصبح سجلًا مهمًا للتراث الجيولوجي للمملكة. واليوم يضع دثار هذه المجموعة على الإنترنت، ليمكن دراسة كل عينة بالتفصيل من أي مكان.',
+        'نشأ دثار من تعاون طلابي جمعه الشغف بالجيولوجيا والحب للمتحف والرغبة في دعم مسيرته التعليمية بصورة رقمية معاصرة. وانطلاقًا من البيئة الأكاديمية في كلية التعدين، عمل الطلاب على تطوير فكرة تربط بين المعرفة الجيولوجية والتقنية، وتمنح محتويات المتحف مساحة أوسع للوصول والاستكشاف. يمثل دثار اليوم مبادرة طلابية تهدف إلى إبراز قيمة العينات الجيولوجية وتعزيز الاستفادة التعليمية منها، من خلال تجربة رقمية تجمع بين العرض المنظم والمحتوى العلمي وروح المتحف.',
       purposeTitle: 'الغرض',
       purposeBody:
         'حفظ وتوثيق ومشاركة العينات الجيولوجية بطريقة دقيقة وجميلة وفي متناول الجميع، من طلاب السنة الأولى إلى الجيولوجيين العاملين.',
@@ -411,9 +450,9 @@ export const dictionary = {
       teamTitle: 'فريق المشروع',
       teamSubtitle: 'صُمم وطُوّر بشغف بواسطة',
       teamMember1: 'محمد خبراني',
-      teamMember1Role: 'مؤسس شريك ومطوّر',
+      teamMember1Role: 'طالب ثروة معدنية وصخور',
       teamMember2: 'ليان حكمي',
-      teamMember2Role: 'مؤسس شريك ومطوّر',
+      teamMember2Role: 'طالبة جيولوجيا',
       teamStatement:
         'متحف دثار الجيولوجي الرقمي هو مشروع أكاديمي تعاوني تم تصميمه وتطويره من قبل محمد خبراني وليان حكمي، حيث تم تنفيذ جميع مراحل المشروع، بما في ذلك التخطيط، والتصميم، والتطوير، وتنظيم المحتوى، وتجربة المستخدم، بالشراكة الكاملة بينهما.',
       teamContact: 'تواصل',
@@ -436,14 +475,14 @@ export const dictionary = {
       emailLabel: 'البريد الإلكتروني',
       phoneLabel: 'الهاتف',
       locationLabel: 'الموقع',
-      location: 'كلية علوم الأرض، جامعة الملك عبدالعزيز، جدة، المملكة العربية السعودية',
+      location: 'كلية التعدين، جامعة الملك عبدالعزيز، جدة، المملكة العربية السعودية',
       hoursLabel: 'ساعات العمل',
       hours: 'الأحد – الخميس، 9:00 – 16:00',
       follow: 'تابع المتحف',
-      mapAlt: 'خريطة توضح موقع كلية علوم الأرض في جدة',
+      mapAlt: 'خريطة توضح موقع كلية التعدين في جدة',
     },
     footer: {
-      tagline: 'متحف جيولوجي رقمي لكلية علوم الأرض بجامعة الملك عبدالعزيز.',
+      tagline: 'متحف جيولوجي رقمي لكلية التعدين بجامعة الملك عبدالعزيز.',
       quickLinks: 'روابط سريعة',
       collection: 'المجموعة',
       about: 'عن المتحف',
