@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, Search, X } from 'lucide-react';
 
 import { useApp } from '@/components/providers/app-provider';
@@ -20,10 +20,47 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+  // Controls whether the header is visible while scrolling
+  const [headerVisible, setHeaderVisible] = useState(true);
 
-    onScroll();
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // At the very top: always show the header
+      if (currentScrollY <= 10) {
+        setScrolled(false);
+        setHeaderVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      setScrolled(true);
+
+      // Small movement: don't constantly show/hide
+      const difference = currentScrollY - lastScrollY.current;
+
+      if (Math.abs(difference) < 8) {
+        return;
+      }
+
+      // Scrolling down → hide
+      if (difference > 0 && currentScrollY > 80) {
+        setHeaderVisible(false);
+        setOpen(false);
+      }
+
+      // Scrolling up → show
+      if (difference < 0) {
+        setHeaderVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    lastScrollY.current = window.scrollY;
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -50,234 +87,183 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-
-          scrolled
-            ? 'border-b border-border/60 bg-background/80 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.12)] backdrop-blur-xl'
-            : 'border-b border-white/10 bg-black/20 backdrop-blur-md',
+          'fixed inset-x-0 top-0 z-50 transition-transform duration-300 ease-out',
+          headerVisible
+            ? 'translate-y-0'
+            : '-translate-y-full',
         )}
       >
-        {/* ───────────────────────── Header Bar ───────────────────────── */}
-        <div
-          className="
-            mx-auto flex
-            h-16 md:h-18
-            max-w-7xl
-            items-center justify-between
-            gap-2 md:gap-4
-            px-3 sm:px-6 lg:px-8
-          "
-        >
-          {/* ───────────────────────── Logo ───────────────────────── */}
-          <Link
-            href="/"
-            className="group flex min-w-0 items-center gap-2 md:gap-3"
-            aria-label="DETHAR"
-          >
-            <LogoMark
-              className="
-                h-8 w-8
-                md:h-10 md:w-10
-                shrink-0
-                transition-transform duration-300
-                group-hover:scale-105
-              "
-            />
-
-            <span className="flex min-w-0 flex-col leading-none">
-              <span
-                className={cn(
-                  'text-sm md:text-base font-bold tracking-tight transition-colors',
-                  scrolled ? 'text-foreground' : 'text-white',
-                )}
-              >
-                DETHAR
-              </span>
-
-              <span
-                className={cn(
-                  'mt-0.5 text-[8px] md:text-[10px] font-medium uppercase tracking-[0.14em] md:tracking-[0.18em] transition-colors',
-                  scrolled
-                    ? 'text-muted-foreground'
-                    : 'text-white/60',
-                )}
-              >
-                {locale === 'ar'
-                  ? 'متحف جيولوجي رقمي'
-                  : 'Geological Museum'}
-              </span>
-            </span>
-          </Link>
-
-          {/* ───────────────────────── Desktop Navigation ───────────────────────── */}
-          <nav className="hidden items-center gap-0.5 lg:flex">
-            {links.map((l) => {
-              const active = pathname === l.href;
-
-              return (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className={cn(
-                    'relative rounded-full px-4 py-2 text-sm font-medium transition-colors',
-
-                    scrolled
-                      ? active
-                        ? 'text-primary'
-                        : 'text-foreground/70 hover:text-foreground'
-                      : active
-                        ? 'text-accent'
-                        : 'text-white/70 hover:text-white',
-                  )}
-                >
-                  {l.label}
-
-                  {active && (
-                    <span
-                      className={cn(
-                        'absolute inset-x-4 -bottom-0.5 h-px',
-                        scrolled
-                          ? 'bg-primary/60'
-                          : 'bg-accent/70',
-                      )}
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* ───────────────────────── Actions ───────────────────────── */}
-          <div className="flex shrink-0 items-center gap-1.5 md:gap-2">
-
-            {/* Search */}
-            <button
-              type="button"
-              aria-label={t.nav.search}
-              onClick={() => setSearchOpen(true)}
-              className={cn(
-                `
-                  inline-flex
-                  h-8 w-8
-                  md:h-9 md:w-9
-                  items-center justify-center
-                  rounded-full
-                  border
-                  transition-all
-                `,
-
-                scrolled
-                  ? 'border-border/70 bg-card/60 text-foreground hover:border-primary/40 hover:text-primary'
-                  : 'border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:text-white',
-              )}
-            >
-              <Search className="h-4 w-4" />
-            </button>
-
-            {/* Language */}
-            <LangSwitch
-              className="hidden sm:inline-flex"
-              variant={scrolled ? 'solid' : 'glass'}
-            />
-
-            {/* Theme */}
-            <ThemeToggle
-              variant={scrolled ? 'solid' : 'glass'}
-            />
-
-            {/* Mobile Menu */}
-            <button
-              type="button"
-              aria-label={t.common.menu}
-              onClick={() => setOpen((p) => !p)}
-              className={cn(
-                `
-                  inline-flex
-                  h-8 w-8
-                  md:h-9 md:w-9
-                  items-center justify-center
-                  rounded-full
-                  border
-                  transition-all
-                  lg:hidden
-                `,
-
-                scrolled
-                  ? 'border-border/70 bg-card/60 text-foreground hover:border-primary/40 hover:text-primary'
-                  : 'border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:text-white',
-              )}
-            >
-              {open ? (
-                <X className="h-4 w-4" />
-              ) : (
-                <Menu className="h-4 w-4" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* ───────────────────────── Mobile Menu ───────────────────────── */}
         <div
           className={cn(
-            `
-              overflow-hidden
-              border-t border-border/60
-              bg-background/95
-              backdrop-blur-xl
-              transition-[max-height,opacity]
-              duration-300
-              lg:hidden
-            `,
-
-            open
-              ? 'max-h-[80vh] opacity-100'
-              : 'max-h-0 opacity-0',
+            'transition-all duration-500',
+            scrolled
+              ? 'border-b border-border/60 bg-background/80 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.12)] backdrop-blur-xl'
+              : 'border-b border-white/10 bg-black/20 backdrop-blur-md',
           )}
         >
-          <nav
-            className="
-              mx-auto flex
-              max-w-7xl
-              flex-col
-              gap-1
-              px-3 py-3
-              sm:px-6 sm:py-4
-            "
-          >
-            {links.map((l) => {
-              const active = pathname === l.href;
+          <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
 
-              return (
-                <Link
-                  key={l.href}
-                  href={l.href}
+            {/* Logo */}
+            <Link
+              href="/"
+              className="group flex items-center gap-3"
+              aria-label="DETHAR"
+            >
+              <LogoMark
+                className="h-10 w-10 transition-transform duration-300 group-hover:scale-105"
+              />
+
+              <span className="flex flex-col leading-none">
+                <span
                   className={cn(
-                    `
-                      rounded-xl
-                      px-4 py-2.5
-                      md:py-3
-                      text-sm
-                      font-medium
-                      transition-colors
-                    `,
-
-                    active
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-foreground/80 hover:bg-muted',
+                    'text-base font-bold tracking-tight transition-colors',
+                    scrolled
+                      ? 'text-foreground'
+                      : 'text-white',
                   )}
                 >
-                  {l.label}
-                </Link>
-              );
-            })}
+                  DETHAR
+                </span>
 
-            <div className="mt-1 px-2 md:mt-2">
+                <span
+                  className={cn(
+                    'mt-0.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors',
+                    scrolled
+                      ? 'text-muted-foreground'
+                      : 'text-white/60',
+                  )}
+                >
+                  {locale === 'ar'
+                    ? 'متحف جيولوجي رقمي'
+                    : 'Geological Museum'}
+                </span>
+              </span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden items-center gap-0.5 lg:flex">
+              {links.map((l) => {
+                const active = pathname === l.href;
+
+                return (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className={cn(
+                      'relative rounded-full px-4 py-2 text-sm font-medium transition-colors',
+                      scrolled
+                        ? active
+                          ? 'text-primary'
+                          : 'text-foreground/70 hover:text-foreground'
+                        : active
+                          ? 'text-accent'
+                          : 'text-white/70 hover:text-white',
+                    )}
+                  >
+                    {l.label}
+
+                    {active && (
+                      <span
+                        className={cn(
+                          'absolute inset-x-4 -bottom-0.5 h-px',
+                          scrolled
+                            ? 'bg-primary/60'
+                            : 'bg-accent/70',
+                        )}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+
+              {/* Search */}
+              <button
+                type="button"
+                aria-label={t.nav.search}
+                onClick={() => setSearchOpen(true)}
+                className={cn(
+                  'inline-flex h-9 w-9 items-center justify-center rounded-full border transition-all',
+                  scrolled
+                    ? 'border-border/70 bg-card/60 text-foreground hover:border-primary/40 hover:text-primary'
+                    : 'border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:text-white',
+                )}
+              >
+                <Search className="h-4 w-4" />
+              </button>
+
+              {/* Language */}
               <LangSwitch
-                className="w-full justify-center"
-                variant="solid"
+                className="hidden sm:inline-flex"
+                variant={scrolled ? 'solid' : 'glass'}
               />
+
+              {/* Theme */}
+              <ThemeToggle
+                variant={scrolled ? 'solid' : 'glass'}
+              />
+
+              {/* Mobile menu */}
+              <button
+                type="button"
+                aria-label={t.common.menu}
+                onClick={() => setOpen((p) => !p)}
+                className={cn(
+                  'inline-flex h-9 w-9 items-center justify-center rounded-full border transition-all lg:hidden',
+                  scrolled
+                    ? 'border-border/70 bg-card/60 text-foreground hover:border-primary/40 hover:text-primary'
+                    : 'border-white/20 bg-white/5 text-white/80 hover:border-white/40 hover:text-white',
+                )}
+              >
+                {open ? (
+                  <X className="h-4 w-4" />
+                ) : (
+                  <Menu className="h-4 w-4" />
+                )}
+              </button>
             </div>
-          </nav>
+          </div>
+
+          {/* Mobile menu */}
+          <div
+            className={cn(
+              'overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden',
+              open
+                ? 'max-h-[80vh] opacity-100'
+                : 'max-h-0 opacity-0',
+            )}
+          >
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
+              {links.map((l) => {
+                const active = pathname === l.href;
+
+                return (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className={cn(
+                      'rounded-xl px-4 py-3 text-sm font-medium transition-colors',
+                      active
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-foreground/80 hover:bg-muted',
+                    )}
+                  >
+                    {l.label}
+                  </Link>
+                );
+              })}
+
+              <div className="mt-2 px-2">
+                <LangSwitch
+                  className="w-full justify-center"
+                  variant="solid"
+                />
+              </div>
+            </nav>
+          </div>
         </div>
       </header>
 
