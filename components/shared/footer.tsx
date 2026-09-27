@@ -135,7 +135,7 @@ export function Footer() {
             </span>
             <span className="hidden text-accent sm:inline">&middot;</span>
             <span className="text-sm font-semibold text-foreground">
-              {locale === 'ar' ? 'ليان حكمي' : 'Layan Hakmi'}
+              {locale === 'ar' ? 'ليان حكمي' : 'Layan Hakami'}
             </span>
           </div>
           <p className="mt-4 text-center text-xs text-muted-foreground">
