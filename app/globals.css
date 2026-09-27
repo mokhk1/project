@@ -2,66 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   DETHAR GEOLOGICAL MUSEUM
+   Typography System
+   Thmanyah Sans  → Main headings
+   Tajarib        → Body / UI text
+   ========================================================= */
+
+/* ─────────────────────────────────────────────────────────
+   THMANYAH SANS
+   ───────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyahsans-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyahsans-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyahsans-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyahsans-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyahsans-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   TAJARIB TYPEFACE
+   ───────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Tajarib";
+  src: url("/fonts/tajareb/Tajarib_Typeface_Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tajarib";
+  src: url("/fonts/tajareb/Tajarib_Typeface_Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tajarib";
+  src: url("/fonts/tajareb/Tajarib_Typeface_Black.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
 @layer base {
   :root {
     --background: 60 9% 98%;
     --foreground: 220 14% 18%;
+
     --card: 0 0% 100%;
     --card-foreground: 220 14% 18%;
+
     --popover: 0 0% 100%;
     --popover-foreground: 220 14% 18%;
+
     --primary: 251 100% 68%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 262 92% 75%;
     --secondary-foreground: 0 0% 100%;
+
     --muted: 260 15% 94%;
     --muted-foreground: 260 8% 45%;
+
     --accent: 47 64% 52%;
     --accent-foreground: 220 14% 18%;
+
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
+
     --border: 260 15% 90%;
     --input: 260 15% 90%;
+
     --ring: 251 100% 68%;
+
     --chart-1: 251 100% 68%;
     --chart-2: 262 92% 75%;
     --chart-3: 47 64% 52%;
     --chart-4: 160 84% 39%;
     --chart-5: 280 50% 55%;
+
     --success: 160 84% 39%;
     --success-foreground: 0 0% 100%;
+
     --radius: 0.75rem;
   }
 
   .dark {
     --background: 260 20% 7%;
     --foreground: 60 15% 94%;
+
     --card: 260 18% 10%;
     --card-foreground: 60 15% 94%;
+
     --popover: 260 18% 10%;
     --popover-foreground: 60 15% 94%;
+
     --primary: 251 90% 72%;
     --primary-foreground: 260 20% 7%;
+
     --secondary: 262 80% 78%;
     --secondary-foreground: 260 20% 7%;
+
     --muted: 260 14% 16%;
     --muted-foreground: 60 8% 62%;
+
     --accent: 47 64% 58%;
     --accent-foreground: 260 20% 7%;
+
     --destructive: 0 62% 45%;
     --destructive-foreground: 60 15% 94%;
+
     --border: 260 14% 18%;
     --input: 260 14% 18%;
+
     --ring: 251 90% 72%;
+
     --chart-1: 251 90% 72%;
     --chart-2: 262 80% 78%;
     --chart-3: 47 64% 58%;
     --chart-4: 160 70% 50%;
     --chart-5: 280 50% 65%;
+
     --success: 160 70% 50%;
     --success-foreground: 260 20% 7%;
   }
 }
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 @layer base {
   * {
@@ -70,29 +191,85 @@
 
   html {
     scroll-behavior: smooth;
-    width: 100%;
-    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: "Tajarib", sans-serif;
     font-feature-settings: "ss01", "cv01", "cv02";
-    width: 100%;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Arabic: Thmanyah for headings, Tajarib for everything else */
   [dir="rtl"] {
-    font-family: var(--font-arabic), "Tajawal", "Noto Kufi Arabic", sans-serif;
+    font-family: "Tajarib", sans-serif;
   }
 
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6 {
+    font-family: "Thmanyah", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* English: Tajarib for headings and body */
   [dir="ltr"] {
-    font-family: var(--font-inter), "Inter", sans-serif;
+    font-family: "Tajarib", sans-serif;
+  }
+
+  [dir="ltr"] h1,
+  [dir="ltr"] h2,
+  [dir="ltr"] h3,
+  [dir="ltr"] h4,
+  [dir="ltr"] h5,
+  [dir="ltr"] h6 {
+    font-family: "Tajarib", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
     @apply bg-primary/20 text-foreground;
   }
 }
+
+
+/* =========================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================= */
+
+.font-thmanyah {
+  font-family: "Thmanyah", sans-serif !important;
+}
+
+.font-tajarib {
+  font-family: "Tajarib", sans-serif !important;
+}
+
+.heading-thmanyah {
+  font-family: "Thmanyah", sans-serif;
+  font-weight: 700;
+}
+
+.heading-thmanyah-black {
+  font-family: "Thmanyah", sans-serif;
+  font-weight: 900;
+}
+
+.body-tajarib {
+  font-family: "Tajarib", sans-serif;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   GLASS
+   ========================================================= */
 
 @layer utilities {
   .glass {
@@ -126,16 +303,19 @@
   }
 }
 
-/* ─────────────────────────────────────────
-   Reveal on scroll
-───────────────────────────────────────── */
+
+/* =========================================================
+   REVEAL ON SCROLL
+   ========================================================= */
 
 .reveal {
   opacity: 0;
   transform: translateY(28px);
+
   transition:
     opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
   will-change: opacity, transform;
 }
 
@@ -144,9 +324,10 @@
   transform: translateY(0);
 }
 
-/* ─────────────────────────────────────────
-   Scroll indicator
-───────────────────────────────────────── */
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
 
 @keyframes scroll-bounce {
   0%,
@@ -165,9 +346,10 @@
   animation: scroll-bounce 2.4s ease-in-out infinite;
 }
 
-/* ─────────────────────────────────────────
-   Ripple
-───────────────────────────────────────── */
+
+/* =========================================================
+   RIPPLE
+   ========================================================= */
 
 .ripple {
   position: relative;
@@ -176,15 +358,21 @@
 
 .ripple::after {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at var(--rx, 50%) var(--ry, 50%),
-    rgba(255, 255, 255, 0.35),
-    transparent 45%
-  );
+
+  background:
+    radial-gradient(
+      circle at var(--rx, 50%) var(--ry, 50%),
+      rgba(255, 255, 255, 0.35),
+      transparent 45%
+    );
+
   opacity: 0;
+
   transition: opacity 0.6s ease;
+
   pointer-events: none;
 }
 
@@ -193,9 +381,10 @@
   transition: opacity 0s;
 }
 
-/* ─────────────────────────────────────────
-   Custom scrollbar
-───────────────────────────────────────── */
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -216,7 +405,10 @@
   background: hsl(var(--primary) / 0.6);
 }
 
-/* Hide scrollbar for horizontal sliders */
+
+/* =========================================================
+   HORIZONTAL SLIDERS
+   ========================================================= */
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -227,9 +419,10 @@
   scrollbar-width: none;
 }
 
-/* ─────────────────────────────────────────
-   Mascot floating animations
-───────────────────────────────────────── */
+
+/* =========================================================
+   MASCOT ANIMATIONS
+   ========================================================= */
 
 @keyframes mascot-float {
   0%,
@@ -261,9 +454,10 @@
   animation: mascot-float-slow 7s ease-in-out infinite;
 }
 
-/* ─────────────────────────────────────────
-   Glow effects
-───────────────────────────────────────── */
+
+/* =========================================================
+   GLOW EFFECTS
+   ========================================================= */
 
 @keyframes glow-pulse {
   0%,
@@ -294,9 +488,10 @@
   box-shadow: 0 0 40px -8px hsl(var(--primary) / 0.15);
 }
 
-/* ─────────────────────────────────────────
-   Page transitions
-───────────────────────────────────────── */
+
+/* =========================================================
+   PAGE TRANSITIONS
+   ========================================================= */
 
 @keyframes page-enter {
   from {
@@ -314,9 +509,10 @@
   animation: page-enter 0.5s ease-out;
 }
 
-/* ─────────────────────────────────────────
-   Shimmer
-───────────────────────────────────────── */
+
+/* =========================================================
+   SHIMMER
+   ========================================================= */
 
 @keyframes shimmer {
   0% {
@@ -337,15 +533,19 @@
   );
 
   background-size: 200% auto;
+
   -webkit-background-clip: text;
   background-clip: text;
+
   -webkit-text-fill-color: transparent;
+
   animation: shimmer 4s linear infinite;
 }
 
-/* ─────────────────────────────────────────
-   Premium card hover
-───────────────────────────────────────── */
+
+/* =========================================================
+   PREMIUM CARDS
+   ========================================================= */
 
 .card-luxury {
   transition:
@@ -355,14 +555,16 @@
 
 .card-luxury:hover {
   transform: translateY(-6px);
+
   box-shadow:
     0 20px 40px -12px hsl(var(--primary) / 0.2),
     0 8px 16px -4px hsl(0 0% 0% / 0.08);
 }
 
-/* ─────────────────────────────────────────
-   Speech bubble
-───────────────────────────────────────── */
+
+/* =========================================================
+   SPEECH BUBBLE
+   ========================================================= */
 
 .speech-bubble {
   position: relative;
@@ -370,20 +572,25 @@
 
 .speech-bubble::after {
   content: "";
+
   position: absolute;
   bottom: -8px;
   left: 50%;
+
   transform: translateX(-50%);
+
   width: 0;
   height: 0;
+
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid hsl(var(--card));
 }
 
-/* ─────────────────────────────────────────
-   Floating geological particles
-───────────────────────────────────────── */
+
+/* =========================================================
+   FLOATING GEOLOGICAL PARTICLES
+   ========================================================= */
 
 @keyframes particle-float {
   0% {
@@ -404,6 +611,7 @@
       translateY(-100vh)
       translateX(var(--particle-drift, 20px))
       rotate(360deg);
+
     opacity: 0;
   }
 }
@@ -414,20 +622,24 @@
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────
-   Glassmorphism
-───────────────────────────────────────── */
+
+/* =========================================================
+   GLASSMORPHISM
+   ========================================================= */
 
 .glass-dark {
   background: rgb(0 0 0 / 0.3);
+
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
+
   border: 1px solid rgb(255 255 255 / 0.1);
 }
 
-/* ─────────────────────────────────────────
-   Speech bubble — side variant
-───────────────────────────────────────── */
+
+/* =========================================================
+   SIDE SPEECH BUBBLE
+   ========================================================= */
 
 .speech-bubble-side {
   position: relative;
@@ -435,38 +647,50 @@
 
 .speech-bubble-side::before {
   content: "";
+
   position: absolute;
   top: 50%;
   inset-inline-start: -8px;
+
   transform: translateY(-50%);
+
   width: 0;
   height: 0;
+
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-inline-end: 8px solid hsl(var(--card));
 }
 
-/* ─────────────────────────────────────────
-   Premium button
-───────────────────────────────────────── */
+
+/* =========================================================
+   PREMIUM BUTTON
+   ========================================================= */
 
 .btn-premium {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition:
+    all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-premium::before {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgb(255 255 255 / 0.2) 50%,
-    transparent 70%
-  );
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgb(255 255 255 / 0.2) 50%,
+      transparent 70%
+    );
+
   transform: translateX(-100%);
+
   transition: transform 0.6s ease;
 }
 
@@ -474,12 +698,18 @@
   transform: translateX(100%);
 }
 
-/* ─────────────────────────────────────────
-   Hero fade-to-background
-───────────────────────────────────────── */
+
+/* =========================================================
+   HERO FADE
+   ========================================================= */
 
 .hero-fade-bottom {
-  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(
+    to bottom,
+    black 85%,
+    transparent 100%
+  );
+
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 85%,
@@ -487,33 +717,32 @@
   );
 }
 
-/* ═════════════════════════════════════════
-   MOBILE — 85% SCALE
-   Matches the Safari 85% appearance
-═════════════════════════════════════════ */
 
-@media (max-width: 767px) {
-  html {
-    font-size: 85%;
+/* =========================================================
+   MOBILE TYPOGRAPHY
+   Keep current sizing — only change fonts
+   ========================================================= */
+
+@media (max-width: 640px) {
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6 {
+    font-family: "Thmanyah", sans-serif;
+  }
+
+  [dir="ltr"] h1,
+  [dir="ltr"] h2,
+  [dir="ltr"] h3,
+  [dir="ltr"] h4,
+  [dir="ltr"] h5,
+  [dir="ltr"] h6 {
+    font-family: "Tajarib", sans-serif;
   }
 
   body {
-    font-size: 1rem;
-  }
-}
-
-/* Extra-small phones */
-
-@media (max-width: 390px) {
-  html {
-    font-size: 82%;
-  }
-}
-
-/* Keep normal sizing on tablets and desktop */
-
-@media (min-width: 768px) {
-  html {
-    font-size: 100%;
+    font-family: "Tajarib", sans-serif;
   }
 }
