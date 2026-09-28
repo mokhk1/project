@@ -160,7 +160,7 @@ export const featured: FeaturedSpecimen[] = [
   museumNumber: 'Fossil',
 
   name: 'Ichthyosaurus',
-  arabicName: 'إكثيوصور',
+  arabicName: 'الإكثيوسورس',
 
   image: FEATURED_IMAGES.ichthyosaurus,
 
@@ -172,13 +172,13 @@ export const featured: FeaturedSpecimen[] = [
     'A fossilized Ichthyosaurus specimen preserved as a mounted skeletal exhibit, representing an extinct marine reptile adapted to life in the ancient oceans.',
 
   arabicDescription:
-    'عينة أحفورية من الإكثيوصور محفوظة كهيكل عظمي مركب، وتمثل زاحفًا بحريًا منقرضًا تكيف مع الحياة في المحيطات القديمة.',
+    'عينة أحفورية من الإكثيوسورس محفوظة كهيكل عظمي مركب، وتمثل زاحفًا بحريًا منقرضًا تكيف مع الحياة في المحيطات القديمة.',
 
   geologicalDescription:
     'Ichthyosaurus was an extinct marine reptile of the Early Jurassic. Its streamlined body, elongated snout, large eyes, and fin-like limbs reflect its adaptation to an active marine lifestyle.',
 
   arabicGeologicalDescription:
-    'الإكثيوصور زاحف بحري منقرض عاش خلال العصر الجوراسي المبكر. ويعكس جسمه الانسيابي وخطمه الطويل وعيناه الكبيرتان وأطرافه الشبيهة بالزعانف تكيفه مع الحياة البحرية النشطة.',
+    'الإكثيوسورس زاحف بحري منقرض عاش خلال العصر الجوراسي المبكر. ويعكس جسمه الانسيابي وخطمه الطويل وعيناه الكبيرتان وأطرافه الشبيهة بالزعانف تكيفه مع الحياة البحرية النشطة.',
 
   subtitle: 'Early Jurassic Marine Reptile',
   arabicSubtitle: 'زاحف بحري من الجوراسي المبكر',
@@ -215,7 +215,7 @@ export const featured: FeaturedSpecimen[] = [
     'This fossil exhibit represents Ichthyosaurus, an extinct marine reptile that lived in the ancient seas during the Early Jurassic. Its streamlined body and paddle-like limbs were adapted for efficient swimming.',
 
   arabicExhibitStory:
-    'يمثل هذا المعروض الأحفوري الإكثيوصور، وهو زاحف بحري منقرض عاش في البحار القديمة خلال الجوراسي المبكر. وقد تكيف جسمه الانسيابي وأطرافه الشبيهة بالمجاديف مع السباحة بكفاءة.',
+    'يمثل هذا المعروض الأحفوري الإكثيوسورس، وهو زاحف بحري منقرض عاش في البحار القديمة خلال الجوراسي المبكر. وقد تكيف جسمه الانسيابي وأطرافه الشبيهة بالمجاديف مع السباحة بكفاءة.',
 
   museumNote:
     'The specimen illustrates the adaptation of marine reptiles to life in the Early Jurassic seas.',

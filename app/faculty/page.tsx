@@ -1,13 +1,24 @@
 'use client';
 
 import Image from 'next/image';
-import { Building2, Compass, Microscope, History, FlaskConical } from 'lucide-react';
+import {
+  Building2,
+  Compass,
+  Microscope,
+  History,
+  FlaskConical,
+} from 'lucide-react';
+
 import { useApp } from '@/components/providers/app-provider';
 import { PageHero } from '@/components/shared/page-hero';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { Reveal } from '@/components/shared/reveal';
 
-import { HERO_COASTAL_ROCKS, FACULTY_CAMPUS, FACULTY_GALLERY } from '@/lib/data/images';
+import {
+  HERO_COASTAL_ROCKS,
+  FACULTY_CAMPUS,
+  FACULTY_GALLERY,
+} from '@/lib/data/images';
 
 const HERO_IMAGE = HERO_COASTAL_ROCKS;
 const CAMPUS_IMAGE = FACULTY_CAMPUS;
@@ -18,6 +29,7 @@ export default function FacultyPage() {
 
   return (
     <>
+      {/* ───────────────────────── Hero ───────────────────────── */}
       <PageHero
         eyebrow={t.faculty.eyebrow}
         title={t.faculty.title}
@@ -25,7 +37,7 @@ export default function FacultyPage() {
         image={HERO_IMAGE}
       />
 
-      {/* Intro + campus */}
+      {/* ───────────────────── Intro + Campus ───────────────────── */}
       <section className="bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -34,13 +46,20 @@ export default function FacultyPage() {
                 <span className="h-px w-8 bg-accent/60" />
                 {t.faculty.eyebrow}
               </span>
-              <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+
+              <h2
+                className={`mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl ${
+                  locale === 'ar' ? 'leading-snug' : ''
+                }`}
+              >
                 {t.faculty.campusTitle}
               </h2>
+
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 {t.faculty.campusBody}
               </p>
             </Reveal>
+
             <Reveal delay={120}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
                 <Image
@@ -56,20 +75,25 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      {/* Departments */}
+      {/* ───────────────────────── Departments ───────────────────────── */}
       <section className="bg-muted/30 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title={t.faculty.departmentsTitle} />
+
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {t.faculty.departments.map((dept, i) => (
               <Reveal key={dept.name} delay={(i % 3) * 80}>
-                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  
+                  {/* Department Icon */}
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <FlaskConical className="h-5 w-5" />
                   </div>
+
                   <h3 className="mt-4 text-lg font-semibold text-foreground">
                     {dept.name}
                   </h3>
+
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {dept.desc}
                   </p>
@@ -80,23 +104,41 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      {/* Mission / Vision / History */}
+      {/* ───────────────────── Mission / Vision / History ───────────────────── */}
       <section className="bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
             {[
-              { icon: Compass, title: t.faculty.missionTitle, body: t.faculty.missionBody },
-              { icon: Microscope, title: t.faculty.visionTitle, body: t.faculty.visionBody },
-              { icon: History, title: t.faculty.historyTitle, body: t.faculty.historyBody },
+              {
+                icon: Compass,
+                title: t.faculty.missionTitle,
+                body: t.faculty.missionBody,
+              },
+              {
+                icon: Microscope,
+                title: t.faculty.visionTitle,
+                body: t.faculty.visionBody,
+              },
+              {
+                icon: History,
+                title: t.faculty.historyTitle,
+                body: t.faculty.historyBody,
+              },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 100}>
-                <div className="h-full rounded-2xl border border-border bg-card p-7 shadow-sm">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary-foreground">
+                <div className="group h-full rounded-2xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                  {/* Icon */}
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <item.icon className="h-5 w-5" />
                   </div>
+
+                  {/* Title */}
                   <h3 className="mt-4 text-xl font-semibold text-foreground">
                     {item.title}
                   </h3>
+
+                  {/* Description */}
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {item.body}
                   </p>
@@ -107,10 +149,11 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* ───────────────────────── Gallery ───────────────────────── */}
       <section className="bg-muted/30 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title={t.faculty.galleryTitle} />
+
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {GALLERY.map((img, i) => (
               <Reveal key={i} delay={(i % 4) * 80}>

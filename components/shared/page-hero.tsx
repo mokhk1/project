@@ -21,6 +21,7 @@ export function PageHero({
   align = 'center',
 }: PageHeroProps) {
   const { locale } = useApp();
+
   return (
     <section className="relative flex min-h-[58vh] items-end overflow-hidden pt-2">
       <div className="absolute inset-0">
@@ -32,10 +33,12 @@ export function PageHero({
           sizes="100vw"
           className="object-cover"
         />
+
         {/* Dark cinematic gradient — keeps photography visible, ensures text contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/65" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
       </div>
+
       <div
         className={cn(
           'relative mx-auto w-full max-w-7xl px-6 py-20 sm:px-6 lg:px-8',
@@ -54,6 +57,7 @@ export function PageHero({
               {eyebrow}
             </span>
           )}
+
           <h1
             className={cn(
               'text-balance text-4xl font-bold tracking-tight text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-6xl',
@@ -62,10 +66,11 @@ export function PageHero({
           >
             {title}
           </h1>
+
           {subtitle && (
             <p
               className={cn(
-                'max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl',
+                'max-w-2xl text-lg leading-relaxed text-white sm:text-xl',
                 align === 'center' && 'mx-auto',
               )}
             >
@@ -74,6 +79,7 @@ export function PageHero({
           )}
         </Reveal>
       </div>
+
       {/* Soft fade into page content */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background" />
     </section>
