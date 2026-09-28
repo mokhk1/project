@@ -745,4 +745,23 @@
   body {
     font-family: "Tajarib", sans-serif;
   }
+  /* ─────────────────────────
+   Mobile Scale Fix
+   ───────────────────────── */
+
+@media (max-width: 640px) {
+  html {
+    font-size: 85%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 641px) {
+  html {
+    font-size: 100%;
+  }
+}
 }
