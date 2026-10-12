@@ -111,11 +111,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2.5" dir="ltr">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <span>rekhalil@kau.edu.sa</span>
+                <span>museum@dethar.kau.edu.sa</span>
               </li>
               <li className="flex items-center gap-2.5" dir="ltr">
                 <Phone className="h-4 w-4 shrink-0 text-accent" />
-                <span>0565345304</span>
+                <span>+966 12 695 2000</span>
               </li>
             </ul>
             <div className="mt-6">
