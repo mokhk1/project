@@ -217,18 +217,21 @@
     letter-spacing: -0.02em;
   }
 
-  /* English: Tajarib for headings and body */
+  /* English: clean system/Inter-style font for all English text */
   [dir="ltr"] {
-    font-family: "Tajarib", sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, sans-serif;
   }
 
+  /* Arabic: Thmanyah for main headings, Tajarib for body/UI text */
   [dir="ltr"] h1,
   [dir="ltr"] h2,
   [dir="ltr"] h3,
   [dir="ltr"] h4,
   [dir="ltr"] h5,
   [dir="ltr"] h6 {
-    font-family: "Tajarib", sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -739,11 +742,17 @@
   [dir="ltr"] h4,
   [dir="ltr"] h5,
   [dir="ltr"] h6 {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, sans-serif;
+  }
+
+  [dir="rtl"] {
     font-family: "Tajarib", sans-serif;
   }
 
-  body {
-    font-family: "Tajarib", sans-serif;
+  [dir="ltr"] {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, sans-serif;
   }
   /* ─────────────────────────
    Mobile Scale Fix

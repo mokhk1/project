@@ -2420,7 +2420,7 @@ Massive Ore (Sphalerite–Stibnite) is a composite sulfide ore consisting predom
 },
 {
   id: 'pyrrhotite',
-  museumNumber: 'DM-36',
+  museumNumber: 'DM-35',
 
   name: 'Pyrrhotite',
   arabicName: 'البيروتيت',
@@ -2483,6 +2483,73 @@ Massive Ore (Sphalerite–Stibnite) is a composite sulfide ore consisting predom
 
   arabicLocation:
     'كندا، روسيا، النرويج، جنوب أفريقيا، أستراليا، الصين، فنلندا، والولايات المتحدة.',
+
+},
+{
+  id: 'quartz',
+  museumNumber: 'DM-36',
+
+  name: 'Quartz',
+  arabicName: 'الكوارتز',
+
+  image: MINERAL_IMAGES.quartz,
+  gallery: MINERAL_GALLERY.quartz,
+
+  description:
+    'Quartz is one of the most abundant and widely distributed minerals in the Earth’s crust. It is a silicate mineral composed of silicon and oxygen and is recognized by its hardness, vitreous luster, and characteristic crystal forms. Quartz occurs in many geological settings, including igneous, metamorphic, and sedimentary rocks, as well as hydrothermal veins and mineralized zones. It may occur as well-formed crystals, massive aggregates, veins, or as a major component of rocks such as granite, sandstone, and quartzite. Pure quartz is colorless and transparent, but natural specimens can display a wide range of colors caused by impurities, inclusions, defects, irradiation, or microscopic intergrowths. Common varieties and colors include clear, milky white, smoky gray to brown, purple amethyst, yellow citrine, pink rose quartz, and other colored forms. Quartz is also an important mineral in geological exploration because quartz veins and quartz-rich rocks can be associated with hydrothermal alteration and mineralization.',
+
+  arabicDescription:
+    'الكوارتز من أكثر المعادن وفرة وانتشارًا في القشرة الأرضية، وهو معدن سيليكاتي يتكون أساسًا من السيليكون والأكسجين. يتميز بصلادته العالية وبريقه الزجاجي وتنوع أشكاله البلورية، ويوجد في بيئات جيولوجية متعددة تشمل الصخور النارية والمتحولة والرسوبية، إضافة إلى العروق الحرارية المائية والمناطق المرتبطة بالتمعدن. قد يظهر الكوارتز على هيئة بلورات واضحة، أو تجمعات كتلية، أو عروق، كما يُعد مكوّنًا رئيسيًا في صخور مثل الجرانيت والحجر الرملي والكوارتزيت. يكون الكوارتز النقي عديم اللون وشفافًا، إلا أن العينات الطبيعية قد تظهر بألوان متعددة نتيجة الشوائب والعناصر النزرة والتضمينات والعيوب البلورية والتعرض للإشعاع أو النمو البلوري الدقيق. ومن ألوانه الشائعة الشفاف، والأبيض الحليبي، والرمادي إلى البني الدخاني، والبنفسجي في الجمشت، والأصفر في السيترين، والوردي في الكوارتز الوردي، إضافة إلى ألوان وأشكال أخرى. كما تُعد عروق الكوارتز والصخور الغنية به مهمة في الاستكشاف الجيولوجي، إذ قد ترتبط بعمليات التحول الحراري المائي والتمعدن.',
+
+  subtitle: 'Silicate · Quartz Group',
+  arabicSubtitle: 'سيليكات · مجموعة الكوارتز',
+
+  type: 'Silicate Mineral',
+  arabicType: 'معدن سيليكاتي',
+
+  chemicalFormula: 'SiO₂',
+  arabicChemicalFormula: 'ثاني أكسيد السيليكون',
+
+  hardness: '7 (Mohs)',
+
+  luster: 'Vitreous',
+  arabicLuster: 'زجاجي',
+
+  crystalSystem: 'Trigonal',
+  arabicCrystalSystem: 'ثلاثي',
+
+  streak: 'White',
+  arabicStreak: 'أبيض',
+
+  formation:
+    'Forms in igneous, metamorphic, sedimentary, and hydrothermal environments. It commonly crystallizes from silica-rich magmas and hydrothermal fluids and may also form through sedimentary deposition and metamorphic recrystallization.',
+
+  arabicFormation:
+    'يتكوّن في البيئات النارية والمتحولة والرسوبية والحرارية المائية. ويتبلور بصورة شائعة من الصهارات الغنية بالسيليكا ومن المحاليل الحرارية المائية، كما قد يتكون نتيجة الترسيب وإعادة التبلور أثناء عمليات التحول.',
+
+  color:
+    'Colorless, white, milky, gray, smoky brown, purple, yellow, pink, and other colors depending on impurities and structural defects',
+
+  arabicColor:
+    'عديم اللون، أبيض، أبيض حليبي، رمادي، بني دخاني، بنفسجي، أصفر، وردي، وألوان أخرى تبعًا للشوائب والعيوب البلورية',
+
+  environment:
+    'Igneous rocks, metamorphic rocks, sedimentary rocks, hydrothermal veins, pegmatites, and mineralized zones',
+
+  arabicEnvironment:
+    'الصخور النارية، والصخور المتحولة، والصخور الرسوبية، والعروق الحرارية المائية، والبيجماتيت، والمناطق المرتبطة بالتمعدن',
+
+  uses:
+    'Glass and ceramics, construction materials, electronics, optical applications, industrial silica, gemstones, abrasives, and geological research.',
+
+  arabicUses:
+    'صناعة الزجاج والسيراميك، ومواد البناء، والإلكترونيات، والتطبيقات البصرية، والسيليكا الصناعية، والأحجار الكريمة، والمواد الكاشطة، والأبحاث الجيولوجية.',
+
+  location:
+    'Worldwide, with major occurrences in Brazil, Madagascar, the United States, Switzerland, Mexico, India, and many regions of the Arabian Shield.',
+
+  arabicLocation:
+    'ينتشر عالميًا، ومن أبرز مناطقه البرازيل ومدغشقر والولايات المتحدة وسويسرا والمكسيك والهند، إضافة إلى مناطق عديدة من الدرع العربي.',
 
 },
 {

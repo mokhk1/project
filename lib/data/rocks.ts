@@ -436,7 +436,7 @@ export const rocks: Specimen[] = [
   arabicName: 'الرخام المخطط',
 
   image: ROCK_IMAGES['bandedMarble'],
-  gallery: ROCK_GALLERY['bandedMarble'],
+  gallery: ROCK_GALLERY['bandedGneiss'],
 
   description:
     'A crystalline metamorphic carbonate rock characterized by alternating light and dark mineral bands formed during regional metamorphism. Banded marble develops through the recrystallization of limestone or dolostone, producing an interlocking mosaic of calcite crystals while preserving distinctive compositional layering.',
@@ -898,14 +898,14 @@ export const rocks: Specimen[] = [
   tags: ['igneous', 'intrusive', 'mafic', 'gabbro'],
 },
 {
-  id: 'granite-collection',
+  id: 'granites',
   museumNumber: 'DR-016',
 
-  name: 'Granite Collection',
+  name: 'Granite-Collection',
   arabicName: 'مجموعة الجرانيت',
 
-  image: ROCK_IMAGES['granite'],
-  gallery: ROCK_GALLERY['granite'],
+  image: ROCK_IMAGES['graniteCollection'],
+  gallery: ROCK_GALLERY['graniteCollection'],
 
   description:
     'A collection of granite specimens displaying different textures, mineral compositions, and grain sizes. The collection includes varieties such as biotite granite, porphyritic granite, microgranite, leucocratic granite, rapakivi granite, and mica-bearing granite.',

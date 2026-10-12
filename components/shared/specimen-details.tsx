@@ -73,10 +73,15 @@ export function SpecimenDetails({
   // Images are controlled ONLY from images.ts
   // ============================================================
 
-  const registeredReferenceImages =
-    kind === 'rock'
-      ? ROCK_GALLERY[id] ?? []
-      : MINERAL_GALLERY[id] ?? [];
+  const galleryKey = specimen.id.replace(
+  /-([a-z])/g,
+  (_, letter) => letter.toUpperCase(),
+);
+
+const registeredReferenceImages =
+  kind === 'rock'
+    ? ROCK_GALLERY[specimen.id] ?? ROCK_GALLERY[galleryKey] ?? []
+    : MINERAL_GALLERY[specimen.id] ?? MINERAL_GALLERY[galleryKey] ?? [];
 
   /*
    * Always keep 3 image slots.
@@ -428,22 +433,19 @@ export function SpecimenDetails({
 
           <div className="mt-6">
             {/* Large active reference image */}
-            <div className="relative aspect-[16/8] overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <div className="relative flex min-h-[260px] max-h-[75vh] w-full items-center justify-center overflow-hidden rounded-3xl border border-black bg-black shadow-sm">
               {referenceImages.map((img, i) => (
-                <Image
+                <img
                   key={`${id}-reference-${i}`}
                   src={img}
                   alt={`${name} reference image ${i + 1}`}
-                  fill
-                  unoptimized
-                  sizes="(max-width: 768px) 100vw, 1200px"
-                  className={`object-cover transition-opacity duration-700 ${
-                    i === referenceIndex ? 'opacity-100' : 'opacity-0'
+                  className={`block max-h-[75vh] max-w-full h-auto w-auto object-contain transition-opacity duration-700 ${
+                    i === referenceIndex ? 'opacity-100' : 'pointer-events-none absolute opacity-0'
                   }`}
                 />
               ))}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
 
               {referenceImages.length > 1 && (
                 <>
@@ -490,19 +492,16 @@ export function SpecimenDetails({
                       ? `عرض الصورة ${i + 1}`
                       : `Show reference image ${i + 1}`
                   }
-                  className={`group relative aspect-[16/9] overflow-hidden rounded-2xl border bg-card transition-all duration-300 ${
+                  className={`group relative aspect-[16/9] overflow-hidden rounded-2xl border bg-black transition-all duration-300 ${
                     i === referenceIndex
                       ? 'border-primary ring-2 ring-primary/30'
                       : 'border-border hover:border-primary/50'
                   }`}
                 >
-                  <Image
+                  <img
                     src={img}
                     alt={`${name} reference thumbnail ${i + 1}`}
-                    fill
-                    unoptimized
-                    sizes="(max-width: 768px) 33vw, 400px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="block h-full w-full object-contain p-1 transition-transform duration-500 group-hover:scale-105"
                   />
                   <div
                     className={`absolute inset-0 transition-opacity ${
