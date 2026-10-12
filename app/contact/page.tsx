@@ -26,8 +26,8 @@ export default function ContactPage() {
   };
 
   const info = [
-    { icon: Mail, label: t.contact.emailLabel, value: 'museum@dethar.kau.edu.sa', dir: 'ltr' },
-    { icon: Phone, label: t.contact.phoneLabel, value: '+966 12 695 2000', dir: 'ltr' },
+    { icon: Mail, label: t.contact.emailLabel, value: 'rekhalil@kau.edu.sa', dir: 'ltr' },
+    { icon: Phone, label: t.contact.phoneLabel, value: '0565345304', dir: 'ltr' },
     { icon: MapPin, label: t.contact.locationLabel, value: t.contact.location, dir: undefined },
     { icon: Clock, label: t.contact.hoursLabel, value: t.contact.hours, dir: undefined },
   ];
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     {t.contact.follow}
                   </h3>
                   <div className="mt-3 flex gap-2">
-                    {['Twitter', 'Instagram', 'Facebook', 'YouTube'].map((s) => (
+                    {[ 'Instagram', 'Facebook', 'YouTube'].map((s) => (
                       <a
                         key={s}
                         href="#"
