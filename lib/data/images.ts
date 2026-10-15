@@ -321,9 +321,9 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   vesicularBasalt: [
-    '/rocks/VesicularBasalt-1.png',
-    '/rocks/VesicularBasalt-2.png',
-    '/rocks/VesicularBasalt-3.png',
+    '/rocks/vesicularBasalt-1.png',
+    '/rocks/vesicularBasalt-2.png',
+    '/rocks/vesicularBasalt-3.png',
   ],
 
   volcanicBomb: [
@@ -333,9 +333,9 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   whiteSandstone: [
-    '/phmu/ff.jpg',
-    '/phmu/kk.jpg',
-    '/phmu/ABOUTSTORY.jpg',
+    '/rocks/WhiteSandstone-1.png',
+    '/rocks/WhiteSandstone-2.png',
+    '/rocks/WhiteSandstone-3.png',
   ],
 };
 
