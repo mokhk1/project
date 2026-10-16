@@ -61,7 +61,7 @@ export const ROCK_IMAGES = {
   granodiorite: '/rocks/Granodiorite.jpg',
   graptoliticShale: '/rocks/GraptoliticShale.jpg',
   lapilliTuff: '/rocks/LapilliTuff.jpg',
-  lavaFlowTypes: '/rocks/LavaFlowTypes.jpg',
+  lavaFlowTypes: '/rocks/lavaFlowTypes.jpg',
   layeredGabbro: '/rocks/LayeredGabbro.jpg',
   Limestone: '/rocks/Limestone.jpg',
   microDiorite: '/rocks/MicroDiorite.jpg',
@@ -93,231 +93,231 @@ export const ROCK_IMAGES = {
 export const ROCK_GALLERY: Record<string, string[]> = {
 
   agglomerate: [
-    '/rocks/Agglomerate-1.webp',
-    '/rocks/Agglomerate-2.jpg',
-    '/rocks/Agglomerate-3.webp',
+    '/rocks/agglomerate-3.png',
+    '/rocks/Agglomerate-2.png',
+    '/rocks/Agglomerate-1.png',
   ],
 
   amphibolite: [
-    '/rocks/Amphibolite-1.jpg',
+    '/rocks/Amphibolite-1.png',
+    '/rocks/Amphibolite-3.png',
     '/rocks/Amphibolite-2.png',
-    '/rocks/Amphibolite-3.jpg',
   ],
 
   andesite: [
     '/rocks/Andesite-1.webp',
+    '/rocks/Andesite-3.png',
     '/rocks/Andesite-2.png',
-    '/rocks/Andesite-3.jpg',
   ],
 
   arkose: [
-    '/rocks/Arkose-1.jpg',
-    '/rocks/Arkose-2.jpg',
-    '/rocks/Arkose-3.jpg',
+    '/rocks/Arkose-1.png',
+    '/rocks/Arkose-2.png',
+    '/rocks/Arkose-3.png',
   ],
 
   bandedGneiss: [
-    '/rocks/bandedGneiss-1.jpg',
+    '/rocks/bandedGneiss-1.png',
+    '/rocks/bandedGneiss-3.png',
     '/rocks/bandedGneiss-2.png',
-    '/rocks/bandedGneiss-3.jpeg',
   ],
 
   biotiteSchist: [
     '/rocks/BiotiteSchist-1.jpg',
-    '/rocks/biotiteSchist-2.png',
-    '/rocks/biotiteSchist-3.jpg',
+    '/rocks/BiotiteSchist-2.png',
+    '/rocks/BiotiteSchist-3.jpg',
   ],
 
   bandedMarble: [
-    '/rocks/BandedMarble-1.jpg',
-    '/rocks/BandedMarble-2.jpg',
-    '/rocks/BandedMarble-3.jpg',
+    '/rocks/bandedMarble-1.jpg',
+    '/rocks/bandedMarble-2.jpg',
+    '/rocks/bandedMarble-3.jpg',
   ],
 
   chloriteSchist: [
-    '/rocks/ChloriteSchist-1.jpg',
-    '/rocks/ChloriteSchist-2.jpg',
-    '/rocks/ChloriteSchist-3.jpg',
+    '/rocks/chloriteSchist-1.jpg',
+    '/rocks/chloriteSchist-2.jpg',
+    '/rocks/chloriteSchist-3.jpg',
   ],
 
   compactedSchist: [
-    '/rocks/CompactedSchist-1.jpg',
-    '/rocks/CompactedSchist-2.webp',
-    '/rocks/CompactedSchist-3.jpg',
+    '/rocks/compactedSchist-1.jpg',
+    '/rocks/compactedSchist-2.webp',
+    '/rocks/compactedSchist-3.jpg',
   ],
 
   concretionSandstone: [
-    '/rocks/ConcretionSandstone-1.jpg',
-    '/rocks/ConcretionSandstone-2.jpg',
-    '/rocks/ConcretionSandstone-3.jpeg',
+    '/rocks/concretionSandstone-1.jpg',
+    '/rocks/concretionSandstone-2.jpg',
+    '/rocks/concretionSandstone-3.jpeg',
   ],
 
   curlySchist: [
-    '/rocks/CurlySchist-1.jpg',
-    '/rocks/CurlySchist-2.jpg',
-    '/rocks/CurlySchist-3.jpg',
+    '/rocks/curlySchist-1.jpg',
+    '/rocks/curlySchist-2.jpg',
+    '/rocks/curlySchist-3.jpg',
   ],
 
   desertRose: [
-    '/rocks/DesertRose-1.jpg',
-    '/rocks/DesertRose-2.jpg',
-    '/rocks/DesertRose-3.jpeg',
+    '/rocks/desertRose-1.jpg',
+    '/rocks/desertRose-2.jpg',
+    '/rocks/desertRose-3.jpeg',
   ],
 
   dunite: [
-    '/rocks/Dunite-1.jpg',
-    '/rocks/Dunite-2.jpg',
-    '/rocks/Dunite-3.jpg',
+    '/rocks/dunite-1.jpg',
+    '/rocks/dunite-2.jpg',
+    '/rocks/dunite-3.jpg',
   ],
 
   ferrousSandstone: [
-    '/rocks/FerrousSandstone-1.jpg',
-    '/rocks/FerrousSandstone-2.jpg',
-    '/rocks/FerrousSandstone-3.jpg',
+    '/rocks/ferrousSandstone-1.jpg',
+    '/rocks/ferrousSandstone-2.jpg',
+    '/rocks/ferrousSandstone-3.jpg',
   ],
 
   gabbro: [
-    '/rocks/Gabbro-1.webp',
-    '/rocks/Gabbro-2.jpg',
-    '/rocks/Gabbro-3.png',
+    '/rocks/gabbro-1.webp',
+    '/rocks/gabbro-2.jpg',
+    '/rocks/gabbro-3.png',
   ],
 
   granites: [
-    '/rocks/Granite-1.jpg',
-    '/rocks/Granite-2.jpeg',
-    '/rocks/Granite-3.png',
+    '/rocks/granite-1.jpg',
+    '/rocks/granite-2.jpeg',
+    '/rocks/granite-3.png',
   ],
 
   granodiorite: [
-    '/rocks/Granodiorite-1.jpg',
-    '/rocks/Granodiorite-2.webp',
-    '/rocks/Granodiorite-3.png',
+    '/rocks/granodiorite-1.jpg',
+    '/rocks/granodiorite-2.webp',
+    '/rocks/granodiorite-3.png',
   ],
 
   graptoliticShale: [
-    '/rocks/GraptoliticShale-1.jpg',
-    '/rocks/GraptoliticShale-2.jpg',
-    '/rocks/GraptoliticShale-3.webp',
+    '/rocks/graptoliticShale-1.jpg',
+    '/rocks/graptoliticShale-2.jpg',
+    '/rocks/graptoliticShale-3.webp',
   ],
 
   lapilliTuff: [
-    '/rocks/LapilliTuff-1.jpg',
-    '/rocks/LapilliTuff-2.jpg',
-    '/rocks/LapilliTuff-3.png',
+    '/rocks/lapilliTuff-1.jpg',
+    '/rocks/lapilliTuff-2.jpg',
+    '/rocks/lapilliTuff-3.png',
   ],
 
   lavaFlowTypes: [
-    '/rocks/LavaFlowTypes-1.jpg',
-    '/rocks/LavaFlowTypes-2.jpg',
-    '/rocks/LavaFlowTypes-3.jpg',
+    '/rocks/lavaFlowTypes-1.jpg',
+    '/rocks/lavaFlowTypes-2.jpg',
+    '/rocks/lavaFlowTypes-3.jpg',
   ],
 
   layeredGabbro: [
-    '/rocks/LayeredGabbro-1.jpg',
-    '/rocks/LayeredGabbro-2.jpg',
-    '/rocks/LayeredGabbro-3.png',
+    '/rocks/layeredGabbro-1.jpg',
+    '/rocks/layeredGabbro-2.jpg',
+    '/rocks/layeredGabbro-3.png',
   ],
 
-  Limestone: [
-    '/rocks/Limestone-1.webp',
-    '/rocks/Limestone-2.jpg',
-    '/rocks/Limestone-3.png',
+  limestone: [
+    '/rocks/limestone-1.webp',
+    '/rocks/limestone-2.jpg',
+    '/rocks/limestone-3.png',
   ],
 
   microDiorite: [
-    '/rocks/MicroDiorite-1.png',
-    '/rocks/MicroDiorite-2.png',
-    '/rocks/MicroDiorite-3.png',
-  ],
-
-  microGranodiorite: [
-    '/rocks/MicroGranodiorite-1.png',
-    '/rocks/MicroGranodiorite-2.png',
+    '/rocks/microDiorite-1-1.png',
+    '/rocks/microDiorite-2.png',
     '/rocks/microDiorite-3.png',
   ],
 
+  microGranodiorite: [
+    '/rocks/microGranodiorite-1.png',
+    '/rocks/microGranodiorite-2.png',
+    '/rocks/microGranodiorite-3.png',
+  ],
+
   mudstone: [
-    '/rocks/Mudstone-1.png',
-    '/rocks/Mudstone-2.png',
-    '/rocks/Mudstone-3.png',
+    '/rocks/mudstone-1.png',
+    '/rocks/mudstone-2.png',
+    '/rocks/mudstone-3.png',
   ],
 
   mylonite: [
-    '/rocks/Mylonite-1.png',
-    '/rocks/Mylonite-2.png',
-    '/rocks/Mylonite-3.png',
+    '/rocks/mylonite-1.png',
+    '/rocks/mylonite-2.png',
+    '/rocks/mylonite-3.png',
   ],
 
   oligomictConglomerate: [
-    '/rocks/OligomictConglomerate-1.png',
-    '/rocks/OligomictConglomerate-2.png',
-    '/rocks/OligomictConglomerate-3.png',
+    '/rocks/oligomictConglomerate-1.png',
+    '/rocks/oligomictConglomerate-2.png',
+    '/rocks/oligomictConglomerate-3.png',
   ],
 
   pegmatiticGabbro: [
-    '/rocks/PegmatiticGabbro-1.png',
-    '/rocks/PegmatiticGabbro-2.png',
-    '/rocks/PegmatiticGabbro-3.png',
+    '/rocks/pegmatiticGabbro-1.png',
+    '/rocks/pegmatiticGabbro-2.png',
+    '/rocks/pegmatiticGabbro-3.png',
   ],
 
   phosphate: [
-    '/rocks/Phosphate-1.png',
-    '/rocks/Phosphate-2.png',
-    '/rocks/Phosphate-3.png',
+    '/rocks/phosphate-1.png',
+    '/rocks/phosphate-2.png',
+    '/rocks/phosphate-3.png',
   ],
 
   porphyriticAndesite: [
-    '/rocks/PorphyriticAndesite-1.png',
-    '/rocks/PorphyriticAndesite-2.png',
-    '/rocks/PorphyriticAndesite-3.png',
+    '/rocks/porphyriticAndesite-1.png',
+    '/rocks/porphyriticAndesite-2.png',
+    '/rocks/porphyriticAndesite-3.png',
   ],
 
   porphyriticRhyolite: [
-    '/rocks/PorphyriticRhyolite-1.png',
-    '/rocks/PorphyriticRhyolite-2.png',
-    '/rocks/PorphyriticRhyolite-3.png',
+    '/rocks/porphyriticRhyolite-1.png',
+    '/rocks/porphyriticRhyolite-2.png',
+    '/rocks/porphyriticRhyolite-3.png',
   ],
 
   pyroxenite: [
-    '/rocks/Pyroxenite-1.png',
-    '/rocks/Pyroxenite-2.png',
-    '/rocks/Pyroxenite-3.png',
+    '/rocks/pyroxenite-1.png',
+    '/rocks/pyroxenite-2.png',
+    '/rocks/pyroxenite-3.png',
   ],
 
   serpentinite: [
-    '/rocks/Serpentinite-1.png',
-    '/rocks/Serpentinite-2.png',
-    '/rocks/Serpentinite-3.png',
+    '/rocks/serpentinite-1.png',
+    '/rocks/serpentinite-2.png',
+    '/rocks/serpentinite-3.png',
   ],
 
   siltstone: [
-    '/rocks/Siltstone-1.png',
-    '/rocks/Siltstone-2.png',
-    '/rocks/Siltstone-3.png',
+    '/rocks/siltstone-1.png',
+    '/rocks/siltstone-2.png',
+    '/rocks/siltstone-3.png',
   ],
 
   spottedSlate: [
-    '/rocks/SpottedSlate-1.png',
-    '/rocks/SpottedSlate-2.png',
-    '/rocks/SpottedSlate-3.png',
+    '/rocks/spottedSlate-1.png',
+    '/rocks/spottedSlate-2.png',
+    '/rocks/spottedSlate-3.png',
   ],
 
   syenite: [
-    '/rocks/Syenite-1.png',
-    '/rocks/Syenite-2.png',
-    '/rocks/Syenite-3.png',
+    '/rocks/syenite-1.png',
+    '/rocks/syenite-2.png',
+    '/rocks/syenite-3.png',
   ],
 
   trachyticAndesite: [
-    '/rocks/TrachyticAndesite-1.png',
-    '/rocks/TrachyticAndesite-2.png',
-    '/rocks/TrachyticAndesite-3.png',
+    '/rocks/trachyticAndesite-1.png',
+    '/rocks/trachyticAndesite-2.png',
+    '/rocks/trachyticAndesite-3.png',
   ],
 
   vesicularAndesite: [
-    '/rocks/VesicularAndesite-1.png',
-    '/rocks/VesicularAndesite-2.png',
-    '/rocks/VesicularAndesite-3.png',
+    '/rocks/vesicularAndesite-1.png',
+    '/rocks/vesicularAndesite-2.png',
+    '/rocks/vesicularAndesite-3.png',
   ],
 
   vesicularBasalt: [
@@ -327,15 +327,15 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   volcanicBomb: [
-    '/rocks/VolcanicBomb-1.png',
-    '/rocks/VolcanicBomb-2.png',
-    '/rocks/VolcanicBomb-3.png',
+    '/rocks/volcanicBomb-1.png',
+    '/rocks/volcanicBomb-2.png',
+    '/rocks/volcanicBomb-3.png',
   ],
 
   whiteSandstone: [
-    '/rocks/WhiteSandstone-1.png',
-    '/rocks/WhiteSandstone-2.png',
-    '/rocks/WhiteSandstone-3.png',
+    '/rocks/whiteSandstone-1.png',
+    '/rocks/whiteSandstone-2.png',
+    '/rocks/whiteSandstone-3.png',
   ],
 };
 
