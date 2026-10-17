@@ -241,8 +241,7 @@ export default function RocksPage() {
                CARDS
             ================================================== */
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
+            <div className="grid grid-cols-2 gap-3 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filtered.map((rock, i) => (
                 <Reveal
                   key={rock.id}
@@ -296,8 +295,7 @@ function MuseumCard({
          Image
       ====================================================== */}
 
-      <div className="relative aspect-[4/5] overflow-hidden">
-
+      <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden">
         <Image
           src={rock.image}
           alt={name}
@@ -327,7 +325,7 @@ function MuseumCard({
          Museum Label
       ====================================================== */}
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-3 sm:p-6">
 
         <h3 className="text-lg font-semibold tracking-tight text-foreground">
           {name}
