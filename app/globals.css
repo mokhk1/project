@@ -96,47 +96,57 @@
    ========================================================= */
 
 @layer base {
-  :root {
-    --background: 60 9% 98%;
-    --foreground: 220 14% 18%;
+  
+:root {
+  /* Warm Off-White Background */
+  --background: 40 33% 95%;
+  --foreground: 260 19% 17%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 14% 18%;
+  /* Cards */
+  --card: 0 0% 100%;
+  --card-foreground: 260 19% 17%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 18%;
+  /* Popovers */
+  --popover: 0 0% 100%;
+  --popover-foreground: 260 19% 17%;
 
-    --primary: 251 100% 68%;
-    --primary-foreground: 0 0% 100%;
+  /* DETHAR Purple */
+  --primary: 251 100% 68%;
+  --primary-foreground: 0 0% 100%;
 
-    --secondary: 262 92% 75%;
-    --secondary-foreground: 0 0% 100%;
+  --secondary: 262 92% 75%;
+  --secondary-foreground: 0 0% 100%;
 
-    --muted: 260 15% 94%;
-    --muted-foreground: 260 8% 45%;
+  /* Warm Beige Surfaces */
+  --muted: 38 25% 91%;
+  --muted-foreground: 260 8% 42%;
 
-    --accent: 47 64% 52%;
-    --accent-foreground: 220 14% 18%;
+  /* Gold Accent */
+  --accent: 47 64% 52%;
+  --accent-foreground: 260 19% 17%;
 
-    --destructive: 0 72% 50%;
-    --destructive-foreground: 0 0% 100%;
+  --destructive: 0 72% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-    --border: 260 15% 90%;
-    --input: 260 15% 90%;
+  /* Warm Borders */
+  --border: 35 22% 86%;
+  --input: 35 22% 86%;
 
-    --ring: 251 100% 68%;
+  --ring: 251 100% 68%;
 
-    --chart-1: 251 100% 68%;
-    --chart-2: 262 92% 75%;
-    --chart-3: 47 64% 52%;
-    --chart-4: 160 84% 39%;
-    --chart-5: 280 50% 55%;
+  /* Charts */
+  --chart-1: 251 100% 68%;
+  --chart-2: 262 92% 75%;
+  --chart-3: 47 64% 52%;
+  --chart-4: 160 84% 39%;
+  --chart-5: 280 50% 55%;
 
-    --success: 160 84% 39%;
-    --success-foreground: 0 0% 100%;
+  --success: 160 84% 39%;
+  --success-foreground: 0 0% 100%;
 
-    --radius: 0.75rem;
-  }
+  --radius: 0.75rem;
+}
+
 
   .dark {
     --background: 260 20% 7%;

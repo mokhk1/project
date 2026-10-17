@@ -68,7 +68,7 @@ export const ROCK_IMAGES = {
   microGranodiorite: '/rocks/MicroGranodiorite.jpg',
   mudstone: '/rocks/Mudstone.jpg',
   mylonite: '/rocks/Mylonite.jpg',
-  oligomictConglomerate: '/rocks/OligomictConglomerate.jpg',
+  oligomictConglomerate: '/rocks/oligomictConglomerate.jpg',
   pegmatiticGabbro: '/rocks/PegmatiticGabbro.jpg',
   phosphate: '/rocks/Phosphate.jpg',
   porphyriticAndesite: '/rocks/PorphyriticAndesite.jpg',
@@ -93,9 +93,9 @@ export const ROCK_IMAGES = {
 export const ROCK_GALLERY: Record<string, string[]> = {
 
   agglomerate: [
-    '/rocks/agglomerate-3.png',
+    '/rocks/Agglomerate-3.png',
     '/rocks/Agglomerate-2.png',
-    '/rocks/Agglomerate-1.png',
+    '/rocks/agglomerate-1.png',
   ],
 
   amphibolite: [
@@ -165,9 +165,9 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   dunite: [
-    '/rocks/dunite-1.jpg',
-    '/rocks/dunite-2.jpg',
-    '/rocks/dunite-3.jpg',
+    '/rocks/Dunite-1.jpg',
+    '/rocks/Dunite-2.jpg',
+    '/rocks/Dunite-3.jpg',
   ],
 
   ferrousSandstone: [
@@ -219,9 +219,9 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   limestone: [
-    '/rocks/limestone-1.webp',
-    '/rocks/limestone-2.jpg',
-    '/rocks/limestone-3.png',
+    '/rocks/Limestone-1.webp',
+    '/rocks/Limestone-2.jpg',
+    '/rocks/Limestone-3.png',
   ],
 
   microDiorite: [
@@ -231,9 +231,9 @@ export const ROCK_GALLERY: Record<string, string[]> = {
   ],
 
   microGranodiorite: [
-    '/rocks/microGranodiorite-1.png',
+    '/rocks/MicroGranodiorite-1.png',
     '/rocks/microGranodiorite-2.png',
-    '/rocks/microGranodiorite-3.png',
+    '/rocks/microDiorite-3.png',
   ],
 
   mudstone: [
