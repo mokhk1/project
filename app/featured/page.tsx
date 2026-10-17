@@ -98,7 +98,7 @@ export default function FeaturedPage() {
           {/* Collection */}
 
           {specimens.length > 0 ? (
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
               {specimens.map((specimen, i) => (
                 <Reveal
                   key={`${tab}-${specimen.id}`}
@@ -199,7 +199,7 @@ function FeaturedCard({
     >
       {/* Image */}
 
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden">
         <Image
           src={specimen.image}
           alt={name}
@@ -226,7 +226,7 @@ function FeaturedCard({
 
       {/* Museum Label */}
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-3 sm:p-6">
         <h3 className="text-lg font-semibold tracking-tight text-foreground">
           {name}
         </h3>

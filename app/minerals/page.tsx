@@ -103,7 +103,7 @@ export default function MineralsPage() {
               <p className="text-lg text-muted-foreground">{t.minerals.empty}</p>
             </div>
           ) : (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
               {filtered.map((mineral, i) => (
                 <Reveal key={mineral.id} delay={(i % 4) * 70}>
                   <MineralCard mineral={mineral} priority={i < 4} />
@@ -136,7 +136,7 @@ function MineralCard({
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl"
     >
       {/* Image */}
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden">
         <Image
           src={mineral.image}
           alt={name}
@@ -157,7 +157,7 @@ function MineralCard({
       </div>
 
       {/* Museum display label */}
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-3 sm:p-6">
         <h3 className="text-lg font-semibold tracking-tight text-foreground">
           {name}
         </h3>
