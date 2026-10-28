@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -7,7 +8,6 @@ import { useState } from 'react';
 
 import { useApp } from '@/components/providers/app-provider';
 import { PageHero } from '@/components/shared/page-hero';
-import { Reveal } from '@/components/shared/reveal';
 import { featured } from '@/lib/data/featured';
 import { HERO_MOUNTAIN_ALT } from '@/lib/data/images';
 import { cn } from '@/lib/utils';
@@ -17,8 +17,7 @@ const HERO_IMAGE = HERO_MOUNTAIN_ALT;
 type Tab = 'all' | 'highlight' | 'exhibit' | 'library';
 
 export default function FeaturedPage() {
-  const { t } = useApp();
-
+  const { t, locale } = useApp();
   const [tab, setTab] = useState<Tab>('all');
 
   const tabs = [
@@ -32,12 +31,10 @@ export default function FeaturedPage() {
     const tags =
       specimen.tags?.map((tag) => tag.toLowerCase()) ?? [];
 
-    /* جميع العناصر */
     if (tab === 'all') {
       return true;
     }
 
-    /* العينات المميزة */
     if (tab === 'highlight') {
       return (
         tags.includes('highlight') ||
@@ -45,7 +42,6 @@ export default function FeaturedPage() {
       );
     }
 
-    /* الأحافير والمعروضات */
     if (tab === 'exhibit') {
       return (
         tags.includes('exhibit') ||
@@ -55,13 +51,40 @@ export default function FeaturedPage() {
       );
     }
 
-    /* المكتبة */
     if (tab === 'library') {
       return tags.includes('library');
     }
 
     return false;
   });
+
+  const sortedSpecimens = [...specimens].sort((a, b) => {
+    const nameA =
+      (locale === 'ar' ? a.arabicName : a.name)?.trim() ?? '';
+
+    const nameB =
+      (locale === 'ar' ? b.arabicName : b.name)?.trim() ?? '';
+
+    return nameA.localeCompare(
+      nameB,
+      locale === 'ar' ? 'ar' : 'en',
+      {
+        sensitivity: 'base',
+        numeric: true,
+      }
+    );
+  });
+
+  const counterTitle =
+    tab === 'all'
+      ? locale === 'ar'
+        ? 'جميع المجموعات'
+        : 'All Collections'
+      : tab === 'highlight'
+        ? t.featured.tabs.Highlights
+        : tab === 'exhibit'
+          ? t.featured.tabs.exhibits
+          : t.featured.tabs.library;
 
   return (
     <>
@@ -75,6 +98,31 @@ export default function FeaturedPage() {
       <section className="bg-background py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
+          {/* Collection Count */}
+
+          <div
+            className="mb-6 flex items-center justify-between gap-4"
+            aria-label={
+              locale === 'ar'
+                ? 'عدد عناصر المجموعة'
+                : 'Collection item count'
+            }
+          >
+            <p className="text-sm text-muted-foreground">
+              {counterTitle}
+            </p>
+
+            <p
+              className="text-sm font-medium text-muted-foreground"
+              aria-live="polite"
+            >
+              <span className="font-bold tabular-nums text-foreground">
+                {sortedSpecimens.length}
+              </span>{' '}
+              {locale === 'ar' ? 'عنصر' : 'items'}
+            </p>
+          </div>
+
           {/* Tabs */}
 
           <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-2">
@@ -83,10 +131,11 @@ export default function FeaturedPage() {
                 key={tb.id}
                 type="button"
                 onClick={() => setTab(tb.id)}
+                aria-pressed={tab === tb.id}
                 className={cn(
-                  'shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition-all',
+                  'shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition-colors',
                   tab === tb.id
-                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    ? 'bg-primary text-primary-foreground'
                     : 'border border-border bg-card text-foreground/70 hover:border-primary/40 hover:text-foreground'
                 )}
               >
@@ -97,18 +146,14 @@ export default function FeaturedPage() {
 
           {/* Collection */}
 
-          {specimens.length > 0 ? (
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-              {specimens.map((specimen, i) => (
-                <Reveal
+          {sortedSpecimens.length > 0 ? (
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+              {sortedSpecimens.map((specimen, i) => (
+                <FeaturedCard
                   key={`${tab}-${specimen.id}`}
-                  delay={(i % 3) * 80}
-                >
-                  <FeaturedCard
-                    specimen={specimen}
-                    priority={i < 3}
-                  />
-                </Reveal>
+                  specimen={specimen}
+                  priority={i < 3}
+                />
               ))}
             </div>
           ) : (
@@ -123,10 +168,6 @@ export default function FeaturedPage() {
     </>
   );
 }
-
-/* ═══════════════════════════════════════════════════════════════
-   Featured Card
-═══════════════════════════════════════════════════════════════ */
 
 function FeaturedCard({
   specimen,
@@ -154,73 +195,27 @@ function FeaturedCard({
       ? specimen.name
       : specimen.arabicName;
 
-  const tags =
-    specimen.tags?.map((tag) => tag.toLowerCase()) ?? [];
-
-  const isHighlight =
-    tags.includes('highlight') ||
-    tags.includes('highlights');
-
-  const isExhibit =
-    tags.includes('exhibit') ||
-    tags.includes('exhibits') ||
-    tags.includes('fossil') ||
-    tags.includes('fossils');
-
-  const isLibrary =
-    tags.includes('library');
-
-  let badge =
-    locale === 'ar'
-      ? 'عينة مميزة'
-      : 'Featured';
-
-  if (isExhibit) {
-    badge =
-      locale === 'ar'
-        ? 'أحفورة'
-        : 'Fossil';
-  } else if (isLibrary) {
-    badge =
-      locale === 'ar'
-        ? 'مكتبة'
-        : 'Library';
-  } else if (isHighlight) {
-    badge =
-      locale === 'ar'
-        ? 'عينة مميزة'
-        : 'Highlight';
-  }
-
   return (
     <Link
       href={`/featured/${specimen.id}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow duration-300 hover:shadow-lg"
     >
       {/* Image */}
 
-      <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[4/5]">
         <Image
           src={specimen.image}
           alt={name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           priority={priority}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
+        {/* Museum Number Only */}
 
-        {/* Museum Number */}
-
-        <span className="absolute start-3 top-3 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/90 backdrop-blur-md">
+        <span className="absolute left-1/2 top-3 z-10 -translate-x-1/2 rounded-full border border-white/20 bg-black/35 px-4 py-1.5 text-xs font-semibold tracking-wider text-white shadow-sm backdrop-blur-sm">
           {specimen.museumNumber}
-        </span>
-
-        {/* Category */}
-
-        <span className="absolute end-3 top-3 rounded-full bg-secondary/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-secondary-foreground">
-          {badge}
         </span>
       </div>
 
@@ -238,11 +233,11 @@ function FeaturedCard({
           {secondaryName}
         </p>
 
-        <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-primary transition-all group-hover:gap-2.5">
+        <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-primary">
           {t.home.viewDetails}
 
           <ArrowUpRight
-            className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:-scale-x-100"
+            className="h-4 w-4 rtl:-scale-x-100"
           />
         </span>
       </div>

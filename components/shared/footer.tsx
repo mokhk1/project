@@ -1,7 +1,8 @@
+
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 import { useApp } from '@/components/providers/app-provider';
 import { LangSwitch } from './lang-switch';
 import { LogoMark } from './logo';
@@ -16,10 +17,35 @@ export function Footer() {
     { href: '/faculty', label: t.nav.faculty },
     { href: '/contact', label: t.nav.contact },
   ];
+
   const collectionLinks = [
     { href: '/rocks', label: t.nav.rocks },
     { href: '/minerals', label: t.nav.minerals },
     { href: '/featured', label: t.nav.featured },
+  ];
+
+  const socialLinks = [
+    {
+      label: 'X',
+      href: 'https://x.com/earkau?s=11',
+      Icon: () => (
+        <svg
+          viewBox="0 0 24 24"
+          className="h-4 w-4 fill-current"
+          aria-hidden="true"
+        >
+          <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.56L5.43 22H2.3l7.25-8.29L1.8 2h6.4l4.43 6.96L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.41L17.8 20Z" />
+        </svg>
+      ),
+    },
+    
+
+   
+    {
+      Icon: Youtube,
+      label: 'YouTube',
+      href: 'https://youtu.be/ylu-NlYiA2Q',
+    },
   ];
 
   return (
@@ -39,23 +65,22 @@ export function Footer() {
                 </span>
               </span>
             </Link>
+
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t.footer.tagline}
             </p>
+
             <div className="mt-6 flex items-center gap-2">
-              {[
-                { Icon: Twitter, label: 'Twitter' },
-                { Icon: Instagram, label: 'Instagram' },
-                { Icon: Facebook, label: 'Facebook' },
-                { Icon: Youtube, label: 'YouTube' },
-              ].map(({ Icon, label }) => (
+              {socialLinks.map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-all hover:border-accent/40 hover:text-accent hover:shadow-sm"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon />
                 </a>
               ))}
             </div>
@@ -118,17 +143,19 @@ export function Footer() {
                 <span>0565345304</span>
               </li>
             </ul>
+
             <div className="mt-6">
               <LangSwitch />
             </div>
           </div>
         </div>
 
-        {/* Team credits — equal weight, no hierarchy */}
+        {/* Team credits */}
         <div className="mt-16 border-t border-border pt-10">
           <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             {locale === 'ar' ? 'صُمم وطُوّر بواسطة' : 'Designed & Developed by'}
           </p>
+
           <div className="mt-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-5">
             <span className="text-sm font-semibold text-foreground">
               {locale === 'ar' ? 'محمد خبراني' : 'Mohammed Khubrani'}
@@ -138,6 +165,7 @@ export function Footer() {
               {locale === 'ar' ? 'ليان حكمي' : 'Layan Hakami'}
             </span>
           </div>
+
           <p className="mt-4 text-center text-xs text-muted-foreground">
             {locale === 'ar'
               ? 'كلية التعدين · جامعة الملك عبدالعزيز'
